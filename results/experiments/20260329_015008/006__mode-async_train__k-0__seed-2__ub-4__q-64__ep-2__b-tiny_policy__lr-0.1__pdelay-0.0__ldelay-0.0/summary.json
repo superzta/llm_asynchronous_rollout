@@ -1,0 +1,145 @@
+{
+  "mode": "async_train",
+  "num_accepted": 5,
+  "num_dropped": 19,
+  "num_total_seen": 24,
+  "wall_clock_sec": 0.2014775276184082,
+  "avg_reward": 0.6,
+  "pass_rate": 0.4,
+  "avg_latency_sec": 0.07415084838867188,
+  "mean_staleness": 0.0,
+  "max_staleness": 0,
+  "queue_depth_trace": [
+    {
+      "t_sec": 0.0011646747589111328,
+      "sample_queue_depth": 23,
+      "train_queue_depth": 0
+    },
+    {
+      "t_sec": 0.10132288932800293,
+      "sample_queue_depth": 21,
+      "train_queue_depth": 0
+    },
+    {
+      "t_sec": 0.20139575004577637,
+      "sample_queue_depth": 0,
+      "train_queue_depth": 0
+    }
+  ],
+  "backend": "tiny_policy",
+  "seed": 2,
+  "lr": 0.1,
+  "update_batch_size": 4,
+  "update_count": 2,
+  "final_policy_version": 2,
+  "train_buffer_size": 5,
+  "dropped_stale_count": 19,
+  "reward_by_step": [
+    {
+      "step": 1,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 2,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 3,
+      "reward": 1.0
+    },
+    {
+      "step": 4,
+      "reward": 1.0
+    },
+    {
+      "step": 5,
+      "reward": 0.3333333333333333
+    }
+  ],
+  "pass_rate_by_step": [
+    {
+      "step": 1,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 2,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 3,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 4,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 5,
+      "pass_rate": 0.0
+    }
+  ],
+  "tokens_per_sec_by_step": [
+    {
+      "step": 1,
+      "tokens_per_sec": 370767.2044198895
+    },
+    {
+      "step": 2,
+      "tokens_per_sec": 1525201.4545454546
+    },
+    {
+      "step": 3,
+      "tokens_per_sec": 1797558.857142857
+    },
+    {
+      "step": 4,
+      "tokens_per_sec": 3407872.0
+    },
+    {
+      "step": 5,
+      "tokens_per_sec": 2713961.411764706
+    }
+  ],
+  "avg_tokens_per_sec": 1963072.1855745814,
+  "update_history": [
+    {
+      "update_id": 1,
+      "policy_version": 1,
+      "loss": 2.7755575615628914e-17,
+      "avg_reward": 0.6666666666666666,
+      "batch_size": 4
+    },
+    {
+      "update_id": 2,
+      "policy_version": 2,
+      "loss": 0.0,
+      "avg_reward": 0.3333333333333333,
+      "batch_size": 1
+    }
+  ],
+  "accepted_fraction": 0.20833333333333334,
+  "dropped_fraction": 0.7916666666666666,
+  "effective_updates_per_second": 9.92666538864788,
+  "reward_per_second": 14.88999808297182,
+  "reward_per_update": 1.5,
+  "pass_rate_per_update": 1.0,
+  "config": {
+    "dataset": "data/tiny_coding_train.jsonl",
+    "epochs": 2,
+    "seed": 2,
+    "backend": "tiny_policy",
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "max_new_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "device": "auto",
+    "lr": 0.1,
+    "update_batch_size": 4,
+    "dummy_sleep_sec": 0.01,
+    "reward_timeout_sec": 2.0,
+    "staleness_k": 0,
+    "queue_maxsize": 64,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0
+  }
+}

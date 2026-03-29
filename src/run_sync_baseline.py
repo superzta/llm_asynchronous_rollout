@@ -145,6 +145,8 @@ def run(args):
 
     wall_clock_sec = time.time() - wall_start
     summary = summarize_sync(results=results, wall_clock_sec=wall_clock_sec)
+    total_reward = sum([float(r["reward"]) for r in results])
+    total_passes = sum([1.0 if r["pass"] else 0.0 for r in results])
     summary["mode"] = "sync_train"
     summary["update_count"] = trainer.update_count
     summary["final_policy_version"] = policy_version
@@ -158,6 +160,30 @@ def run(args):
     summary["avg_tokens_per_sec"] = (
         sum([x["tokens_per_sec"] for x in tokens_per_sec_by_step]) / max(len(tokens_per_sec_by_step), 1)
     )
+    summary["staleness_k"] = None
+    summary["queue_maxsize"] = None
+    summary["accepted_fraction"] = 1.0 if results else 0.0
+    summary["dropped_fraction"] = 0.0
+    summary["dropped_stale_count"] = 0
+    summary["effective_updates_per_second"] = trainer.update_count / max(wall_clock_sec, 1e-9)
+    summary["reward_per_second"] = total_reward / max(wall_clock_sec, 1e-9)
+    summary["reward_per_update"] = total_reward / max(float(trainer.update_count), 1.0)
+    summary["pass_rate_per_update"] = total_passes / max(float(trainer.update_count), 1.0)
+    summary["config"] = {
+        "dataset": args.dataset,
+        "epochs": args.epochs,
+        "seed": args.seed,
+        "backend": args.backend,
+        "hf_model_id": args.hf_model_id,
+        "max_new_tokens": args.max_new_tokens,
+        "temperature": args.temperature,
+        "top_p": args.top_p,
+        "device": args.device,
+        "lr": args.lr,
+        "update_batch_size": args.update_batch_size,
+        "dummy_sleep_sec": args.dummy_sleep_sec,
+        "reward_timeout_sec": args.reward_timeout_sec,
+    }
     write_jsonl(args.results_jsonl, results)
     write_json(args.summary_json, summary)
     return summary

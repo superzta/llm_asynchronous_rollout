@@ -1,0 +1,4216 @@
+[
+  {
+    "run_name": "001__mode-sync_train__k-na__seed-0__ub-4__q-na__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "sync_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "seed": 0,
+    "update_batch_size": 4,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_samples": 24,
+    "wall_clock_sec": 0.8572084903717041,
+    "avg_reward": 0.3333333333333333,
+    "pass_rate": 0.20833333333333334,
+    "avg_latency_sec": 1.2507041295369467e-05,
+    "update_count": 6,
+    "final_policy_version": 6,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 1.0
+      },
+      {
+        "step": 14,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 1.0
+      },
+      {
+        "step": 17,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 0.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      },
+      {
+        "step": 22,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 23,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 24,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 22,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 23,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 24,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 583555.3391304348
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 713924.085106383
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 809427.0877192982
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 1028791.5471698113
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 986895.0588235294
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 1090519.04
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 2177811.6923076925
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 1135957.3333333333
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 1398101.3333333333
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 941578.4489795918
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 3086374.6415094337
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 904653.8039215687
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 1537911.4666666666
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 1398101.3333333333
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 870515.9245283019
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 1112774.530612245
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 1398101.3333333333
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 1845493.76
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 1986775.5789473683
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 1198372.5714285714
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 2752512.0
+      },
+      {
+        "step": 22,
+        "tokens_per_sec": 1315860.0784313725
+      },
+      {
+        "step": 23,
+        "tokens_per_sec": 3086374.6415094337
+      },
+      {
+        "step": 24,
+        "tokens_per_sec": 1315860.0784313725
+      }
+    ],
+    "avg_tokens_per_sec": 1444843.4461898503,
+    "staleness_k": null,
+    "queue_maxsize": null,
+    "accepted_fraction": 1.0,
+    "dropped_fraction": 0.0,
+    "dropped_stale_count": 0,
+    "effective_updates_per_second": 6.9994640363376135,
+    "reward_per_second": 9.332618715116817,
+    "reward_per_update": 1.3333333333333333,
+    "pass_rate_per_update": 0.8333333333333334,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 0,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0
+    }
+  },
+  {
+    "run_name": "002__mode-sync_train__k-na__seed-1__ub-4__q-na__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "sync_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "seed": 1,
+    "update_batch_size": 4,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_samples": 24,
+    "wall_clock_sec": 0.8197429180145264,
+    "avg_reward": 0.4166666666666667,
+    "pass_rate": 0.3333333333333333,
+    "avg_latency_sec": 1.3013680775960287e-05,
+    "update_count": 6,
+    "final_policy_version": 6,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 1.0
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 0.0
+      },
+      {
+        "step": 9,
+        "reward": 1.0
+      },
+      {
+        "step": 10,
+        "reward": 1.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 14,
+        "reward": 1.0
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 0.0
+      },
+      {
+        "step": 17,
+        "reward": 1.0
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 1.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      },
+      {
+        "step": 22,
+        "reward": 0.0
+      },
+      {
+        "step": 23,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 24,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 22,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 23,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 24,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 466033.77777777775
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 699050.6666666666
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 995258.5762711865
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 1028791.5471698113
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1016800.9696969697
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 1028791.5471698113
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 941578.4489795918
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 1480342.5882352942
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 2841302.709677419
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 887256.6153846154
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 3145728.0
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 922746.88
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 1973790.1176470588
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 961194.6666666666
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 922746.88
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 1606329.1914893617
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 867787.0344827586
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 1246955.2432432433
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 1364412.1445783132
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 801852.2352941176
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 2590599.529411765
+      },
+      {
+        "step": 22,
+        "tokens_per_sec": 809427.0877192982
+      },
+      {
+        "step": 23,
+        "tokens_per_sec": 2869786.947368421
+      },
+      {
+        "step": 24,
+        "tokens_per_sec": 904653.8039215687
+      }
+    ],
+    "avg_tokens_per_sec": 1348884.0503688215,
+    "staleness_k": null,
+    "queue_maxsize": null,
+    "accepted_fraction": 1.0,
+    "dropped_fraction": 0.0,
+    "dropped_stale_count": 0,
+    "effective_updates_per_second": 7.3193678995512546,
+    "reward_per_second": 12.198946499252092,
+    "reward_per_update": 1.6666666666666667,
+    "pass_rate_per_update": 1.3333333333333333,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 1,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0
+    }
+  },
+  {
+    "run_name": "003__mode-sync_train__k-na__seed-2__ub-4__q-na__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "sync_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "seed": 2,
+    "update_batch_size": 4,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_samples": 24,
+    "wall_clock_sec": 1.0476584434509277,
+    "avg_reward": 0.3888888888888889,
+    "pass_rate": 0.3333333333333333,
+    "avg_latency_sec": 1.2467304865519205e-05,
+    "update_count": 6,
+    "final_policy_version": 6,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 1.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.0
+      },
+      {
+        "step": 12,
+        "reward": 1.0
+      },
+      {
+        "step": 13,
+        "reward": 0.0
+      },
+      {
+        "step": 14,
+        "reward": 0.0
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 0.0
+      },
+      {
+        "step": 17,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 1.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      },
+      {
+        "step": 22,
+        "reward": 1.0
+      },
+      {
+        "step": 23,
+        "reward": 0.0
+      },
+      {
+        "step": 24,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 22,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 23,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 24,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 657930.0392156863
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 657930.0392156863
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 686340.6545454545
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 991380.9454545454
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1318209.8285714285
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 1677721.6
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 2220513.882352941
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 1135957.3333333333
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 1488301.4193548388
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 904653.8039215687
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 632018.4109589041
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 941578.4489795918
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 1537911.4666666666
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 941578.4489795918
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 1276527.3043478262
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 1606329.1914893617
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 1048576.0
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 991380.9454545454
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 838860.8
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 1112774.530612245
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 2590599.529411765
+      },
+      {
+        "step": 22,
+        "tokens_per_sec": 961194.6666666666
+      },
+      {
+        "step": 23,
+        "tokens_per_sec": 1025274.3111111111
+      },
+      {
+        "step": 24,
+        "tokens_per_sec": 1002985.7391304348
+      }
+    ],
+    "avg_tokens_per_sec": 1176938.7224905912,
+    "staleness_k": null,
+    "queue_maxsize": null,
+    "accepted_fraction": 1.0,
+    "dropped_fraction": 0.0,
+    "dropped_stale_count": 0,
+    "effective_updates_per_second": 5.727057360637823,
+    "reward_per_second": 8.908755894325504,
+    "reward_per_update": 1.5555555555555556,
+    "pass_rate_per_update": 1.3333333333333333,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 2,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0
+    }
+  },
+  {
+    "run_name": "004__mode-async_train__k-0__seed-0__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 0,
+    "seed": 0,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 5,
+    "num_dropped": 19,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.30193614959716797,
+    "avg_reward": 0.3333333333333333,
+    "pass_rate": 0.2,
+    "avg_latency_sec": 0.09313359260559081,
+    "mean_staleness": 0.0,
+    "max_staleness": 0,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0015125274658203125,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10158157348632812,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20171332359313965,
+        "sample_queue_depth": 19,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.30184006690979004,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 2,
+    "final_policy_version": 2,
+    "train_buffer_size": 5,
+    "dropped_stale_count": 19,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 404270.265060241
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1917396.1142857142
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2097152.0
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3029219.5555555555
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2097152.0
+      }
+    ],
+    "avg_tokens_per_sec": 1909037.9869803023,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.41666666666666663,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.20833333333333334,
+    "dropped_fraction": 0.7916666666666666,
+    "effective_updates_per_second": 6.623917019105947,
+    "reward_per_second": 5.519930849254955,
+    "reward_per_update": 0.8333333333333333,
+    "pass_rate_per_update": 0.5,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 0,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 0,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "005__mode-async_train__k-0__seed-1__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 0,
+    "seed": 1,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 5,
+    "num_dropped": 19,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.20141243934631348,
+    "avg_reward": 0.4666666666666667,
+    "pass_rate": 0.4,
+    "avg_latency_sec": 0.07208318710327148,
+    "mean_staleness": 0.0,
+    "max_staleness": 0,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011014938354492188,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10117316246032715,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.201310396194458,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 2,
+    "final_policy_version": 2,
+    "train_buffer_size": 5,
+    "dropped_stale_count": 19,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 1.0
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 227277.55665024632
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1766022.7368421052
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2669102.5454545454
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 2869786.947368421
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2097152.0
+      }
+    ],
+    "avg_tokens_per_sec": 1925868.3572630635,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": -2.7755575615628914e-17,
+        "avg_reward": 0.5833333333333334,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.20833333333333334,
+    "dropped_fraction": 0.7916666666666666,
+    "effective_updates_per_second": 9.929873281367449,
+    "reward_per_second": 11.584852161595357,
+    "reward_per_update": 1.1666666666666667,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 1,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 0,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "006__mode-async_train__k-0__seed-2__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 0,
+    "seed": 2,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 5,
+    "num_dropped": 19,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.2014775276184082,
+    "avg_reward": 0.6,
+    "pass_rate": 0.4,
+    "avg_latency_sec": 0.07415084838867188,
+    "mean_staleness": 0.0,
+    "max_staleness": 0,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011646747589111328,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10132288932800293,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20139575004577637,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 2,
+    "final_policy_version": 2,
+    "train_buffer_size": 5,
+    "dropped_stale_count": 19,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 1.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.3333333333333333
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 370767.2044198895
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1525201.4545454546
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1797558.857142857
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2713961.411764706
+      }
+    ],
+    "avg_tokens_per_sec": 1963072.1855745814,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.20833333333333334,
+    "dropped_fraction": 0.7916666666666666,
+    "effective_updates_per_second": 9.92666538864788,
+    "reward_per_second": 14.88999808297182,
+    "reward_per_update": 1.5,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 2,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 0,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "007__mode-async_train__k-1__seed-0__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 1,
+    "seed": 0,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 9,
+    "num_dropped": 15,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.40167665481567383,
+    "avg_reward": 0.2962962962962963,
+    "pass_rate": 0.2222222222222222,
+    "avg_latency_sec": 0.13852447933620876,
+    "mean_staleness": 0.4444444444444444,
+    "max_staleness": 1,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011951923370361328,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10127067565917969,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20134615898132324,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.301422119140625,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.40157461166381836,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 3,
+    "final_policy_version": 3,
+    "train_buffer_size": 9,
+    "dropped_stale_count": 15,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 377016.08988764044
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1398101.3333333333
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2197016.380952381
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1973790.1176470588
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 6661541.647058823
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 4956904.7272727275
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3549026.4615384615
+      }
+    ],
+    "avg_tokens_per_sec": 3080964.1887629884,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.41666666666666663,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.25,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.375,
+    "dropped_fraction": 0.625,
+    "effective_updates_per_second": 7.468693945822357,
+    "reward_per_second": 6.638839062953206,
+    "reward_per_update": 0.8888888888888888,
+    "pass_rate_per_update": 0.6666666666666666,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 0,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 1,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "008__mode-async_train__k-1__seed-1__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 1,
+    "seed": 1,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 9,
+    "num_dropped": 15,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.4017806053161621,
+    "avg_reward": 0.3703703703703704,
+    "pass_rate": 0.3333333333333333,
+    "avg_latency_sec": 0.1376533243391249,
+    "mean_staleness": 0.4444444444444444,
+    "max_staleness": 1,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011639595031738281,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10130047798156738,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20142769813537598,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3015408515930176,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.4016854763031006,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 3,
+    "final_policy_version": 3,
+    "train_buffer_size": 9,
+    "dropped_stale_count": 15,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 1.0
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 0.0
+      },
+      {
+        "step": 9,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 265157.1494252874
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1427848.170212766
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2669102.5454545454
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2097152.0
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 5807497.846153846
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 6291456.0
+      }
+    ],
+    "avg_tokens_per_sec": 3116539.3918814133,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": -2.7755575615628914e-17,
+        "avg_reward": 0.5833333333333334,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 0.0,
+        "avg_reward": 1.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.375,
+    "dropped_fraction": 0.625,
+    "effective_updates_per_second": 7.466761611450341,
+    "reward_per_second": 8.29640179050038,
+    "reward_per_update": 1.1111111111111112,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 1,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 1,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "009__mode-async_train__k-1__seed-2__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 1,
+    "seed": 2,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 9,
+    "num_dropped": 15,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.4016139507293701,
+    "avg_reward": 0.4444444444444444,
+    "pass_rate": 0.3333333333333333,
+    "avg_latency_sec": 0.13820258776346842,
+    "mean_staleness": 0.4444444444444444,
+    "max_staleness": 1,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011854171752929688,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10125303268432617,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20132184028625488,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3013887405395508,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.4015183448791504,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 3,
+    "final_policy_version": 3,
+    "train_buffer_size": 9,
+    "dropped_stale_count": 15,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 1.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 383479.22285714286
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1560671.2558139535
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1715851.6363636365
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3029219.5555555555
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2563185.777777778
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 4856562.52631579
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 6291456.0
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 3894710.8571428573
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3075822.933333333
+      }
+    ],
+    "avg_tokens_per_sec": 3041217.7516844496,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.375,
+    "dropped_fraction": 0.625,
+    "effective_updates_per_second": 7.4698600348710675,
+    "reward_per_second": 9.959813379828091,
+    "reward_per_update": 1.3333333333333333,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 2,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 1,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "010__mode-async_train__k-2__seed-0__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 2,
+    "seed": 0,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 13,
+    "num_dropped": 11,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.5018336772918701,
+    "avg_reward": 0.3333333333333333,
+    "pass_rate": 0.23076923076923078,
+    "avg_latency_sec": 0.20795246270986703,
+    "mean_staleness": 0.9230769230769231,
+    "max_staleness": 2,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.00115966796875,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.1012883186340332,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.2014141082763672,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3015284538269043,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.4016094207763672,
+        "sample_queue_depth": 12,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.5017399787902832,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 4,
+    "final_policy_version": 4,
+    "train_buffer_size": 13,
+    "dropped_stale_count": 11,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 385683.1264367816
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1636801.5609756098
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1922389.3333333333
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1973790.1176470588
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 5960326.736842105
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 3635063.466666667
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 11684132.57142857
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 3549026.4615384615
+      }
+    ],
+    "avg_tokens_per_sec": 3621723.4787324537,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.41666666666666663,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.25,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 1.3877787807814457e-17,
+        "avg_reward": 0.16666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": 0.0,
+        "avg_reward": 1.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.5416666666666666,
+    "dropped_fraction": 0.4583333333333333,
+    "effective_updates_per_second": 7.970768366096664,
+    "reward_per_second": 8.634999063271385,
+    "reward_per_update": 1.0833333333333333,
+    "pass_rate_per_update": 0.75,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 0,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 2,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "011__mode-async_train__k-2__seed-1__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 2,
+    "seed": 1,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 13,
+    "num_dropped": 11,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.5015861988067627,
+    "avg_reward": 0.41025641025641024,
+    "pass_rate": 0.3076923076923077,
+    "avg_latency_sec": 0.24135518074035645,
+    "mean_staleness": 0.9230769230769231,
+    "max_staleness": 2,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011720657348632812,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10124492645263672,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20131134986877441,
+        "sample_queue_depth": 19,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3013732433319092,
+        "sample_queue_depth": 16,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.40143704414367676,
+        "sample_queue_depth": 13,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.5015048980712891,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 4,
+    "final_policy_version": 4,
+    "train_buffer_size": 13,
+    "dropped_stale_count": 11,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 1.0
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 0.0
+      },
+      {
+        "step": 9,
+        "reward": 1.0
+      },
+      {
+        "step": 10,
+        "reward": 1.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 0.3333333333333333
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 256318.57777777777
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1560671.2558139535
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2446677.3333333335
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3029219.5555555555
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1973790.1176470588
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 4718592.0
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 5872025.6
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 9087658.666666666
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 5162220.307692308
+      }
+    ],
+    "avg_tokens_per_sec": 3630858.159226834,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": -2.7755575615628914e-17,
+        "avg_reward": 0.5833333333333334,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": 0.0,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.5416666666666666,
+    "dropped_fraction": 0.4583333333333333,
+    "effective_updates_per_second": 7.974701077333688,
+    "reward_per_second": 10.63293476977825,
+    "reward_per_update": 1.3333333333333333,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 1,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 2,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "012__mode-async_train__k-2__seed-2__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 2,
+    "seed": 2,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 13,
+    "num_dropped": 11,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.5020067691802979,
+    "avg_reward": 0.38461538461538464,
+    "pass_rate": 0.3076923076923077,
+    "avg_latency_sec": 0.23042486264155462,
+    "mean_staleness": 0.9230769230769231,
+    "max_staleness": 2,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0015578269958496094,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10168194770812988,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20174789428710938,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3018157482147217,
+        "sample_queue_depth": 16,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.40184760093688965,
+        "sample_queue_depth": 13,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.501915454864502,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 4,
+    "final_policy_version": 4,
+    "train_buffer_size": 13,
+    "dropped_stale_count": 11,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 1.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.0
+      },
+      {
+        "step": 12,
+        "reward": 1.0
+      },
+      {
+        "step": 13,
+        "reward": 0.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 381300.36363636365
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1491308.088888889
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1797558.857142857
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2883584.0
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 5427922.823529412
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 6291456.0
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 4543829.333333333
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 4194304.0
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 3844778.6666666665
+      }
+    ],
+    "avg_tokens_per_sec": 3398791.392269068,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 0.0,
+        "avg_reward": 0.25,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.5416666666666666,
+    "dropped_fraction": 0.4583333333333333,
+    "effective_updates_per_second": 7.968020045887834,
+    "reward_per_second": 9.960025057359791,
+    "reward_per_update": 1.25,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 2,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 2,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "013__mode-async_train__k-4__seed-0__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 4,
+    "seed": 0,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 21,
+    "num_dropped": 3,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.8026807308197021,
+    "avg_reward": 0.3333333333333333,
+    "pass_rate": 0.23809523809523808,
+    "avg_latency_sec": 0.3499437854403541,
+    "mean_staleness": 1.9047619047619047,
+    "max_staleness": 4,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0016207695007324219,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10174798965454102,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20187854766845703,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.30199480056762695,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.4021306037902832,
+        "sample_queue_depth": 12,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.5022556781768799,
+        "sample_queue_depth": 9,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.6023690700531006,
+        "sample_queue_depth": 6,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.702444314956665,
+        "sample_queue_depth": 3,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.8025815486907959,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 6,
+    "final_policy_version": 6,
+    "train_buffer_size": 21,
+    "dropped_stale_count": 3,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 1.0
+      },
+      {
+        "step": 14,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 1.0
+      },
+      {
+        "step": 17,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 0.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 368730.021978022
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1560671.2558139535
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1774513.2307692308
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3029219.5555555555
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 1973790.1176470588
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3207408.9411764704
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 6291456.0
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 4194304.0
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 11684132.57142857
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 4194304.0
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 5162220.307692308
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 4613734.4
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 6815744.0
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 5126371.555555556
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 10252743.111111112
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 8711246.76923077
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 7549747.2
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 4635809.684210527
+      }
+    ],
+    "avg_tokens_per_sec": 4812691.461355691,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.41666666666666663,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.25,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 1.3877787807814457e-17,
+        "avg_reward": 0.16666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": -0.00872646910230547,
+        "avg_reward": 0.5833333333333334,
+        "batch_size": 4
+      },
+      {
+        "update_id": 5,
+        "policy_version": 5,
+        "loss": -0.0012269623174308332,
+        "avg_reward": 0.08333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 6,
+        "policy_version": 6,
+        "loss": 0.0,
+        "avg_reward": 1.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.875,
+    "dropped_fraction": 0.125,
+    "effective_updates_per_second": 7.4749520819725745,
+    "reward_per_second": 8.720777428968002,
+    "reward_per_update": 1.1666666666666667,
+    "pass_rate_per_update": 0.8333333333333334,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 0,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 4,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "014__mode-async_train__k-4__seed-1__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 4,
+    "seed": 1,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 21,
+    "num_dropped": 3,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.8020336627960205,
+    "avg_reward": 0.4444444444444445,
+    "pass_rate": 0.38095238095238093,
+    "avg_latency_sec": 0.3694719814118885,
+    "mean_staleness": 1.9047619047619047,
+    "max_staleness": 4,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011534690856933594,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10128164291381836,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20140838623046875,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3015432357788086,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.4016139507293701,
+        "sample_queue_depth": 13,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.5016839504241943,
+        "sample_queue_depth": 10,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.6017978191375732,
+        "sample_queue_depth": 8,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.7018730640411377,
+        "sample_queue_depth": 5,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.8019390106201172,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 6,
+    "final_policy_version": 6,
+    "train_buffer_size": 21,
+    "dropped_stale_count": 3,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 1.0
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 0.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.0
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 0.0
+      },
+      {
+        "step": 9,
+        "reward": 1.0
+      },
+      {
+        "step": 10,
+        "reward": 1.0
+      },
+      {
+        "step": 11,
+        "reward": 0.6666666666666666
+      },
+      {
+        "step": 12,
+        "reward": 0.0
+      },
+      {
+        "step": 13,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 14,
+        "reward": 1.0
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 0.0
+      },
+      {
+        "step": 17,
+        "reward": 1.0
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 1.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 265157.1494252874
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1427848.170212766
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 2796202.6666666665
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2097152.0
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 3295524.5714285714
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 5392676.571428572
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 6291456.0
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3844778.6666666665
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 11684132.57142857
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 6100805.818181818
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 4613734.4
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 4613734.4
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 8388608.0
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 2796202.6666666665
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 11534336.0
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 11324620.8
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 6058439.111111111
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 5872025.6
+      }
+    ],
+    "avg_tokens_per_sec": 5179152.648797865,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": -2.7755575615628914e-17,
+        "avg_reward": 0.5833333333333334,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": -0.0009618330083604326,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 5,
+        "policy_version": 5,
+        "loss": 0.0,
+        "avg_reward": 0.5,
+        "batch_size": 4
+      },
+      {
+        "update_id": 6,
+        "policy_version": 6,
+        "loss": 0.0,
+        "avg_reward": 1.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.875,
+    "dropped_fraction": 0.125,
+    "effective_updates_per_second": 7.480982754617829,
+    "reward_per_second": 11.637084284961068,
+    "reward_per_update": 1.5555555555555556,
+    "pass_rate_per_update": 1.3333333333333333,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 1,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 4,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  },
+  {
+    "run_name": "015__mode-async_train__k-4__seed-2__ub-4__q-64__ep-2__b-tiny_policy__lr-0.1__pdelay-0.0__ldelay-0.0",
+    "mode": "async_train",
+    "dataset": "data/tiny_coding_train.jsonl",
+    "staleness_k": 4,
+    "seed": 2,
+    "update_batch_size": 4,
+    "queue_maxsize": 64,
+    "epochs": 2,
+    "backend": "tiny_policy",
+    "lr": 0.1,
+    "max_new_tokens": 64,
+    "reward_timeout_sec": 2.0,
+    "queue_trace_interval_sec": 0.1,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "num_accepted": 21,
+    "num_dropped": 3,
+    "num_total_seen": 24,
+    "wall_clock_sec": 0.8019325733184814,
+    "avg_reward": 0.3492063492063492,
+    "pass_rate": 0.2857142857142857,
+    "avg_latency_sec": 0.363328945069086,
+    "mean_staleness": 1.9047619047619047,
+    "max_staleness": 4,
+    "queue_depth_trace": [
+      {
+        "t_sec": 0.0011665821075439453,
+        "sample_queue_depth": 23,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.10129618644714355,
+        "sample_queue_depth": 21,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.20136260986328125,
+        "sample_queue_depth": 18,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.3014240264892578,
+        "sample_queue_depth": 15,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.401486873626709,
+        "sample_queue_depth": 13,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.501549482345581,
+        "sample_queue_depth": 10,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.6016130447387695,
+        "sample_queue_depth": 7,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.7016763687133789,
+        "sample_queue_depth": 4,
+        "train_queue_depth": 0
+      },
+      {
+        "t_sec": 0.801809549331665,
+        "sample_queue_depth": 0,
+        "train_queue_depth": 0
+      }
+    ],
+    "update_count": 6,
+    "final_policy_version": 6,
+    "train_buffer_size": 21,
+    "dropped_stale_count": 3,
+    "reward_by_step": [
+      {
+        "step": 1,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 2,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 3,
+        "reward": 1.0
+      },
+      {
+        "step": 4,
+        "reward": 1.0
+      },
+      {
+        "step": 5,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 6,
+        "reward": 0.0
+      },
+      {
+        "step": 7,
+        "reward": 0.0
+      },
+      {
+        "step": 8,
+        "reward": 1.0
+      },
+      {
+        "step": 9,
+        "reward": 0.0
+      },
+      {
+        "step": 10,
+        "reward": 0.0
+      },
+      {
+        "step": 11,
+        "reward": 0.0
+      },
+      {
+        "step": 12,
+        "reward": 1.0
+      },
+      {
+        "step": 13,
+        "reward": 0.0
+      },
+      {
+        "step": 14,
+        "reward": 0.0
+      },
+      {
+        "step": 15,
+        "reward": 0.0
+      },
+      {
+        "step": 16,
+        "reward": 0.0
+      },
+      {
+        "step": 17,
+        "reward": 0.3333333333333333
+      },
+      {
+        "step": 18,
+        "reward": 0.0
+      },
+      {
+        "step": 19,
+        "reward": 0.0
+      },
+      {
+        "step": 20,
+        "reward": 1.0
+      },
+      {
+        "step": 21,
+        "reward": 1.0
+      }
+    ],
+    "pass_rate_by_step": [
+      {
+        "step": 1,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 2,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 3,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 4,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 5,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 6,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 7,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 8,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 9,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 10,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 11,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 12,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 13,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 14,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 15,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 16,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 17,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 18,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 19,
+        "pass_rate": 0.0
+      },
+      {
+        "step": 20,
+        "pass_rate": 1.0
+      },
+      {
+        "step": 21,
+        "pass_rate": 1.0
+      }
+    ],
+    "tokens_per_sec_by_step": [
+      {
+        "step": 1,
+        "tokens_per_sec": 377016.08988764044
+      },
+      {
+        "step": 2,
+        "tokens_per_sec": 1560671.2558139535
+      },
+      {
+        "step": 3,
+        "tokens_per_sec": 1797558.857142857
+      },
+      {
+        "step": 4,
+        "tokens_per_sec": 3407872.0
+      },
+      {
+        "step": 5,
+        "tokens_per_sec": 2563185.777777778
+      },
+      {
+        "step": 6,
+        "tokens_per_sec": 5767168.0
+      },
+      {
+        "step": 7,
+        "tokens_per_sec": 6661541.647058823
+      },
+      {
+        "step": 8,
+        "tokens_per_sec": 4543829.333333333
+      },
+      {
+        "step": 9,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 10,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 11,
+        "tokens_per_sec": 3075822.933333333
+      },
+      {
+        "step": 12,
+        "tokens_per_sec": 3549026.4615384615
+      },
+      {
+        "step": 13,
+        "tokens_per_sec": 3844778.6666666665
+      },
+      {
+        "step": 14,
+        "tokens_per_sec": 4194304.0
+      },
+      {
+        "step": 15,
+        "tokens_per_sec": 5338205.090909091
+      },
+      {
+        "step": 16,
+        "tokens_per_sec": 7549747.2
+      },
+      {
+        "step": 17,
+        "tokens_per_sec": 4613734.4
+      },
+      {
+        "step": 18,
+        "tokens_per_sec": 5452595.2
+      },
+      {
+        "step": 19,
+        "tokens_per_sec": 4613734.4
+      },
+      {
+        "step": 20,
+        "tokens_per_sec": 6058439.111111111
+      },
+      {
+        "step": 21,
+        "tokens_per_sec": 5181199.05882353
+      }
+    ],
+    "avg_tokens_per_sec": 4132156.1370603987,
+    "update_history": [
+      {
+        "update_id": 1,
+        "policy_version": 1,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.6666666666666666,
+        "batch_size": 4
+      },
+      {
+        "update_id": 2,
+        "policy_version": 2,
+        "loss": 2.7755575615628914e-17,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 3,
+        "policy_version": 3,
+        "loss": 0.0,
+        "avg_reward": 0.25,
+        "batch_size": 4
+      },
+      {
+        "update_id": 4,
+        "policy_version": 4,
+        "loss": 0.0,
+        "avg_reward": 0.0,
+        "batch_size": 4
+      },
+      {
+        "update_id": 5,
+        "policy_version": 5,
+        "loss": -0.005493151047050476,
+        "avg_reward": 0.3333333333333333,
+        "batch_size": 4
+      },
+      {
+        "update_id": 6,
+        "policy_version": 6,
+        "loss": 0.0,
+        "avg_reward": 1.0,
+        "batch_size": 1
+      }
+    ],
+    "accepted_fraction": 0.875,
+    "dropped_fraction": 0.125,
+    "effective_updates_per_second": 7.481925787315719,
+    "reward_per_second": 9.144575962274768,
+    "reward_per_update": 1.222222222222222,
+    "pass_rate_per_update": 1.0,
+    "config": {
+      "dataset": "data/tiny_coding_train.jsonl",
+      "epochs": 2,
+      "seed": 2,
+      "backend": "tiny_policy",
+      "hf_model_id": "sshleifer/tiny-gpt2",
+      "max_new_tokens": 64,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "device": "auto",
+      "lr": 0.1,
+      "update_batch_size": 4,
+      "dummy_sleep_sec": 0.01,
+      "reward_timeout_sec": 2.0,
+      "staleness_k": 4,
+      "queue_maxsize": 64,
+      "producer_delay_sec": 0.0,
+      "learner_delay_sec": 0.0
+    }
+  }
+]

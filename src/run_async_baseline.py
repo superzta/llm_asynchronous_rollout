@@ -36,6 +36,8 @@ def parse_args():
     parser.add_argument("--staleness-k", type=int, default=1)
     parser.add_argument("--queue-maxsize", type=int, default=64)
     parser.add_argument("--queue-trace-interval-sec", type=float, default=0.1)
+    parser.add_argument("--producer-delay-sec", type=float, default=0.0)
+    parser.add_argument("--learner-delay-sec", type=float, default=0.0)
     parser.add_argument("--results-jsonl", default="results/async_train_results.jsonl")
     parser.add_argument("--summary-json", default="results/async_train_summary.json")
     return parser.parse_args()
@@ -112,6 +114,8 @@ def run(args):
                 "enqueue_time": time.time(),
             }
             sample_queue.put(sample)
+            if args.producer_delay_sec > 0:
+                time.sleep(args.producer_delay_sec)
         producer_done.set()
 
     def consumer():
@@ -227,6 +231,8 @@ def run(args):
             ]
             update_info = backend.policy_gradient_update(train_samples)
             if update_info.get("updated", False):
+                if args.learner_delay_sec > 0:
+                    time.sleep(args.learner_delay_sec)
                 learner_stats["update_count"] += 1
                 new_version = bump_policy_version()
                 update_history.append(
@@ -256,6 +262,8 @@ def run(args):
             ]
             update_info = backend.policy_gradient_update(train_samples)
             if update_info.get("updated", False):
+                if args.learner_delay_sec > 0:
+                    time.sleep(args.learner_delay_sec)
                 learner_stats["update_count"] += 1
                 new_version = bump_policy_version()
                 update_history.append(
@@ -332,6 +340,34 @@ def run(args):
         sum([x["tokens_per_sec"] for x in tokens_per_sec_by_step]) / max(len(tokens_per_sec_by_step), 1)
     )
     summary["update_history"] = update_history
+    total_seen = float(summary["num_total_seen"])
+    total_reward = sum([float(r.get("reward", 0.0)) for r in accepted])
+    total_passes = sum([1.0 if r.get("pass", False) else 0.0 for r in accepted])
+    summary["accepted_fraction"] = float(summary["num_accepted"]) / max(total_seen, 1.0)
+    summary["dropped_fraction"] = float(summary["num_dropped"]) / max(total_seen, 1.0)
+    summary["effective_updates_per_second"] = learner_stats["update_count"] / max(wall_clock_sec, 1e-9)
+    summary["reward_per_second"] = total_reward / max(wall_clock_sec, 1e-9)
+    summary["reward_per_update"] = total_reward / max(float(learner_stats["update_count"]), 1.0)
+    summary["pass_rate_per_update"] = total_passes / max(float(learner_stats["update_count"]), 1.0)
+    summary["config"] = {
+        "dataset": args.dataset,
+        "epochs": args.epochs,
+        "seed": args.seed,
+        "backend": args.backend,
+        "hf_model_id": args.hf_model_id,
+        "max_new_tokens": args.max_new_tokens,
+        "temperature": args.temperature,
+        "top_p": args.top_p,
+        "device": args.device,
+        "lr": args.lr,
+        "update_batch_size": args.update_batch_size,
+        "dummy_sleep_sec": args.dummy_sleep_sec,
+        "reward_timeout_sec": args.reward_timeout_sec,
+        "staleness_k": args.staleness_k,
+        "queue_maxsize": args.queue_maxsize,
+        "producer_delay_sec": args.producer_delay_sec,
+        "learner_delay_sec": args.learner_delay_sec,
+    }
     write_jsonl(args.results_jsonl, all_results)
     write_json(args.summary_json, summary)
     return summary
