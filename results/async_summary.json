@@ -1,0 +1,36 @@
+{
+  "mode": "async",
+  "num_accepted": 12,
+  "num_dropped": 0,
+  "num_total_seen": 12,
+  "wall_clock_sec": 0.500685453414917,
+  "avg_reward": 1.0,
+  "pass_rate": 1.0,
+  "avg_latency_sec": 0.12933496634165445,
+  "mean_staleness": 0.0,
+  "max_staleness": 0,
+  "queue_depth_trace": [
+    {
+      "t_sec": 0.0006535053253173828,
+      "queue_depth": 0
+    },
+    {
+      "t_sec": 0.10072016716003418,
+      "queue_depth": 6
+    },
+    {
+      "t_sec": 0.2007911205291748,
+      "queue_depth": 6
+    },
+    {
+      "t_sec": 0.3009226322174072,
+      "queue_depth": 3
+    },
+    {
+      "t_sec": 0.4010472297668457,
+      "queue_depth": 0
+    }
+  ],
+  "final_policy_version": 1,
+  "train_buffer_size": 12
+}

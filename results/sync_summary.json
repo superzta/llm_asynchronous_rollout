@@ -1,0 +1,8 @@
+{
+  "mode": "sync",
+  "num_samples": 12,
+  "wall_clock_sec": 0.5654592514038086,
+  "avg_reward": 1.0,
+  "pass_rate": 1.0,
+  "avg_latency_sec": 0.01007982095082601
+}
