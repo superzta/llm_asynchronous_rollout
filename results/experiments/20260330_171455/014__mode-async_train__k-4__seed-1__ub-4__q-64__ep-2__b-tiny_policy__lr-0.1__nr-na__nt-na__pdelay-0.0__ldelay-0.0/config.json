@@ -1,0 +1,17 @@
+{
+  "mode": "async_train",
+  "dataset": "data/tiny_coding_train.jsonl",
+  "staleness_k": 4,
+  "seed": 1,
+  "update_batch_size": 4,
+  "queue_maxsize": 64,
+  "epochs": 2,
+  "backend": "tiny_policy",
+  "lr": 0.1,
+  "max_new_tokens": 64,
+  "reward_timeout_sec": 2.0,
+  "queue_trace_interval_sec": 0.1,
+  "producer_delay_sec": 0.0,
+  "learner_delay_sec": 0.0,
+  "hf_model_id": "sshleifer/tiny-gpt2"
+}
