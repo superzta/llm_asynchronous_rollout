@@ -41,6 +41,31 @@ class BaseModelBackend:
         _ = samples
         return {"updated": False, "loss": 0.0, "avg_reward": 0.0}
 
+    def get_trainable_state(self):
+        # type: () -> Dict[str, Any]
+        return {}
+
+    def load_trainable_state(self, state):
+        # type: (Dict[str, Any]) -> None
+        _ = state
+        return
+
+    def clone_for_device(self, device):
+        # type: (str) -> "BaseModelBackend"
+        _ = device
+        return self
+
+    def maybe_generate_chunk(self, prompt, task, generation_state, chunk_size):
+        # type: (str, Optional[CodingTask], Optional[Dict[str, Any]], int) -> Dict[str, Any]
+        # Default one-shot fallback.
+        result = self.generate(prompt=prompt, task=task)
+        return {
+            "done": True,
+            "generation_state": None,
+            "result": result,
+            "intermediate_text": result.text,
+        }
+
 
 _DUMMY_SOLUTIONS = {
     "add_one": "def add_one(x: int) -> int:\n    return x + 1\n",
@@ -104,6 +129,14 @@ class DummyModelBackend(BaseModelBackend):
             token_logprobs=[0.0] * token_count,
             logprob_sum=0.0,
             metadata={"task_id": task_id, "action_idx": 0},
+        )
+
+    def clone_for_device(self, device):
+        # type: (str) -> BaseModelBackend
+        _ = device
+        return DummyModelBackend(
+            sleep_sec=self.sleep_sec,
+            use_markdown_fence=self.use_markdown_fence,
         )
 
 
@@ -209,6 +242,57 @@ class TinyPolicyBackend(BaseModelBackend):
             "loss": total_loss / max(len(samples), 1),
             "avg_reward": baseline,
             "batch_size": len(samples),
+        }
+
+    def get_trainable_state(self):
+        # type: () -> Dict[str, Any]
+        state = {"task_logits": {}, "lr": self.lr}
+        with self.lock:
+            for key, value in self.task_logits.items():
+                state["task_logits"][key] = [float(x) for x in value]
+        return state
+
+    def load_trainable_state(self, state):
+        # type: (Dict[str, Any]) -> None
+        if not state:
+            return
+        with self.lock:
+            raw = state.get("task_logits", {})
+            self.task_logits = {}
+            for key, value in raw.items():
+                self.task_logits[key] = [float(x) for x in value]
+            if "lr" in state:
+                self.lr = float(state["lr"])
+
+    def clone_for_device(self, device):
+        # type: (str) -> BaseModelBackend
+        _ = device
+        clone = TinyPolicyBackend(
+            lr=self.lr,
+            use_markdown_fence=self.use_markdown_fence,
+            seed=0,
+        )
+        clone.load_trainable_state(self.get_trainable_state())
+        return clone
+
+    def maybe_generate_chunk(self, prompt, task, generation_state, chunk_size):
+        # type: (str, Optional[CodingTask], Optional[Dict[str, Any]], int) -> Dict[str, Any]
+        if generation_state is None:
+            generation_state = {"remaining_chunks": max(int(chunk_size), 1)}
+        generation_state["remaining_chunks"] -= 1
+        if generation_state["remaining_chunks"] > 0:
+            return {
+                "done": False,
+                "generation_state": generation_state,
+                "result": None,
+                "intermediate_text": "",
+            }
+        result = self.generate(prompt=prompt, task=task)
+        return {
+            "done": True,
+            "generation_state": None,
+            "result": result,
+            "intermediate_text": result.text,
         }
 
 
@@ -372,6 +456,55 @@ class TrainableHFCausalLMBackend(BaseModelBackend):
             "loss": float(loss.item()),
             "avg_reward": avg_reward,
             "batch_size": len(samples),
+        }
+
+    def get_trainable_state(self):
+        # type: () -> Dict[str, Any]
+        self._lazy_init()
+        torch = self._torch
+        with self.lock:
+            state_dict = self._model.state_dict()
+            cpu_state = {}
+            for key, value in state_dict.items():
+                cpu_state[key] = value.detach().cpu().clone()
+        return {"state_dict": cpu_state}
+
+    def load_trainable_state(self, state):
+        # type: (Dict[str, Any]) -> None
+        self._lazy_init()
+        if not state:
+            return
+        raw_state = state.get("state_dict")
+        if not raw_state:
+            return
+        with self.lock:
+            self._model.load_state_dict(raw_state, strict=False)
+
+    def clone_for_device(self, device):
+        # type: (str) -> BaseModelBackend
+        clone = TrainableHFCausalLMBackend(
+            model_id=self.model_id,
+            lr=self.lr,
+            max_new_tokens=self.max_new_tokens,
+            temperature=self.temperature,
+            top_p=self.top_p,
+            device=device,
+            seed=self.seed,
+        )
+        clone.load_trainable_state(self.get_trainable_state())
+        return clone
+
+    def maybe_generate_chunk(self, prompt, task, generation_state, chunk_size):
+        # type: (str, Optional[CodingTask], Optional[Dict[str, Any]], int) -> Dict[str, Any]
+        # Lightweight chunk-level fallback: one generation call per chunk request.
+        # True token-level interruption is intentionally not implemented in this baseline.
+        _ = chunk_size
+        result = self.generate(prompt=prompt, task=task)
+        return {
+            "done": True,
+            "generation_state": None,
+            "result": result,
+            "intermediate_text": result.text,
         }
 
 

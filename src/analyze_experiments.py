@@ -126,13 +126,20 @@ def _plot_all(experiment_dir, runs):
     grouped = _group_mode_staleness(runs)
 
     # Reward vs staleness bound
-    async_keys = sorted([k for k in grouped.keys() if k[0] == "async_train"], key=lambda x: int(x[1]))
-    if async_keys:
-        xs = [int(k[1]) for k in async_keys]
-        ys = [grouped[k]["avg_reward"][0] for k in async_keys]
-        es = [grouped[k]["avg_reward"][1] for k in async_keys]
+    async_modes = ["async_train", "async_areal_style"]
+    if any([k[0] in async_modes for k in grouped.keys()]):
         plt.figure(figsize=(7, 4))
-        plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label="async")
+        for mode in async_modes:
+            mode_keys = sorted(
+                [k for k in grouped.keys() if k[0] == mode and k[1] is not None],
+                key=lambda x: int(x[1]),
+            )
+            if not mode_keys:
+                continue
+            xs = [int(k[1]) for k in mode_keys]
+            ys = [grouped[k]["avg_reward"][0] for k in mode_keys]
+            es = [grouped[k]["avg_reward"][1] for k in mode_keys]
+            plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label=mode)
         sync_vals = [grouped[k]["avg_reward"][0] for k in grouped.keys() if k[0] == "sync_train"]
         if sync_vals:
             sync_mean = sum(sync_vals) / float(len(sync_vals))
@@ -147,12 +154,19 @@ def _plot_all(experiment_dir, runs):
         plt.close()
 
     # Pass rate vs staleness bound
-    if async_keys:
-        xs = [int(k[1]) for k in async_keys]
-        ys = [grouped[k]["pass_rate"][0] for k in async_keys]
-        es = [grouped[k]["pass_rate"][1] for k in async_keys]
+    if any([k[0] in async_modes for k in grouped.keys()]):
         plt.figure(figsize=(7, 4))
-        plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label="async")
+        for mode in async_modes:
+            mode_keys = sorted(
+                [k for k in grouped.keys() if k[0] == mode and k[1] is not None],
+                key=lambda x: int(x[1]),
+            )
+            if not mode_keys:
+                continue
+            xs = [int(k[1]) for k in mode_keys]
+            ys = [grouped[k]["pass_rate"][0] for k in mode_keys]
+            es = [grouped[k]["pass_rate"][1] for k in mode_keys]
+            plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label=mode)
         sync_vals = [grouped[k]["pass_rate"][0] for k in grouped.keys() if k[0] == "sync_train"]
         if sync_vals:
             sync_mean = sum(sync_vals) / float(len(sync_vals))
@@ -167,16 +181,24 @@ def _plot_all(experiment_dir, runs):
         plt.close()
 
     # Dropped stale count vs staleness bound
-    if async_keys:
-        xs = [int(k[1]) for k in async_keys]
-        ys = [grouped[k]["dropped_stale_count"][0] for k in async_keys]
-        es = [grouped[k]["dropped_stale_count"][1] for k in async_keys]
+    if any([k[0] in async_modes for k in grouped.keys()]):
         plt.figure(figsize=(7, 4))
-        plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3)
+        for mode in async_modes:
+            mode_keys = sorted(
+                [k for k in grouped.keys() if k[0] == mode and k[1] is not None],
+                key=lambda x: int(x[1]),
+            )
+            if not mode_keys:
+                continue
+            xs = [int(k[1]) for k in mode_keys]
+            ys = [grouped[k]["dropped_stale_count"][0] for k in mode_keys]
+            es = [grouped[k]["dropped_stale_count"][1] for k in mode_keys]
+            plt.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label=mode)
         plt.xlabel("staleness_k")
         plt.ylabel("dropped_stale_count")
         plt.title("Dropped Stale Count vs Staleness Bound")
         plt.grid(True, alpha=0.3)
+        plt.legend()
         plt.tight_layout()
         plt.savefig(str(plots_dir / "dropped_stale_vs_staleness.png"), dpi=150)
         plt.close()
@@ -224,20 +246,20 @@ def _plot_all(experiment_dir, runs):
     # Queue depth traces for representative async runs (one per staleness_k)
     rep_async = {}
     for r in runs:
-        if r.get("mode") != "async_train":
+        if r.get("mode") not in ("async_train", "async_areal_style"):
             continue
-        k = r.get("staleness_k", None)
+        k = "%s|k=%s" % (str(r.get("mode")), str(r.get("staleness_k", None)))
         if k not in rep_async:
             rep_async[k] = r
     if rep_async:
         plt.figure(figsize=(8, 5))
-        for k in sorted(rep_async.keys(), key=lambda x: int(x)):
+        for k in sorted(rep_async.keys()):
             trace = rep_async[k].get("queue_depth_trace", [])
             if not trace:
                 continue
             xs = [float(t.get("t_sec", 0.0)) for t in trace]
-            ys = [float(t.get("sample_queue_depth", 0.0)) for t in trace]
-            plt.plot(xs, ys, label="sample_queue k=%s" % str(k))
+            ys = [float(t.get("sample_queue_depth", t.get("rollout_queue_depth", 0.0))) for t in trace]
+            plt.plot(xs, ys, label="sample_queue %s" % str(k))
         plt.xlabel("time (sec)")
         plt.ylabel("queue depth")
         plt.title("Representative Async Sample Queue Depth Traces")
@@ -248,13 +270,13 @@ def _plot_all(experiment_dir, runs):
         plt.close()
 
         plt.figure(figsize=(8, 5))
-        for k in sorted(rep_async.keys(), key=lambda x: int(x)):
+        for k in sorted(rep_async.keys()):
             trace = rep_async[k].get("queue_depth_trace", [])
             if not trace:
                 continue
             xs = [float(t.get("t_sec", 0.0)) for t in trace]
             ys = [float(t.get("train_queue_depth", 0.0)) for t in trace]
-            plt.plot(xs, ys, label="train_queue k=%s" % str(k))
+            plt.plot(xs, ys, label="train_queue %s" % str(k))
         plt.xlabel("time (sec)")
         plt.ylabel("queue depth")
         plt.title("Representative Async Train Queue Depth Traces")

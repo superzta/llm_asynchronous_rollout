@@ -1,0 +1,414 @@
+{
+  "mode": "async_areal_style",
+  "num_rollout_workers": 2,
+  "num_trainer_workers": 1,
+  "rollout_devices": [
+    "cpu",
+    "cpu"
+  ],
+  "trainer_devices": [
+    "cpu"
+  ],
+  "update_count": 5,
+  "final_policy_version": 5,
+  "num_total_seen": 24,
+  "num_accepted": 18,
+  "num_dropped": 6,
+  "accepted_fraction": 0.75,
+  "dropped_fraction": 0.25,
+  "mean_staleness": 0.2222222222222222,
+  "max_staleness": 1,
+  "avg_reward": 0.2777777777777778,
+  "pass_rate": 0.2222222222222222,
+  "wall_clock_sec": 0.6812684535980225,
+  "avg_tokens_per_sec": 601811.7158062415,
+  "queue_depth_trace": [
+    {
+      "t_sec": 0.12830567359924316,
+      "rollout_queue_depth": 2,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.2605772018432617,
+      "rollout_queue_depth": 2,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.36434078216552734,
+      "rollout_queue_depth": 3,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.4733853340148926,
+      "rollout_queue_depth": 2,
+      "trainer_queue_depth": 1
+    },
+    {
+      "t_sec": 0.5816047191619873,
+      "rollout_queue_depth": 1,
+      "trainer_queue_depth": 0
+    }
+  ],
+  "replay_buffer_size_trace": [
+    {
+      "t_sec": 0.12830567359924316,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 0.2605772018432617,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 0.36434078216552734,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.4733853340148926,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.5816047191619873,
+      "replay_buffer_size": 3
+    }
+  ],
+  "per_rollout_worker_generated_count": {
+    "0": 9,
+    "1": 9
+  },
+  "per_rollout_worker_interrupt_count": {
+    "0": 3,
+    "1": 3
+  },
+  "per_rollout_worker_last_loaded_policy_version": {
+    "0": 3,
+    "1": 3
+  },
+  "per_trainer_worker_update_count": {
+    "0": 5
+  },
+  "interrupted_samples_count": 6,
+  "reward_by_step": [
+    {
+      "step": 0,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 0,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 1.0
+    },
+    {
+      "step": 0,
+      "reward": 1.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 1.0
+    },
+    {
+      "step": 0,
+      "reward": 1.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    },
+    {
+      "step": 0,
+      "reward": 0.0
+    }
+  ],
+  "pass_rate_by_step": [
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 0,
+      "pass_rate": 0.0
+    }
+  ],
+  "tokens_per_sec_by_step": [
+    {
+      "step": 0,
+      "tokens_per_sec": 213722.49681528663
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 187980.0112044818
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 302681.73195876286
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 754974.72
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 472597.6338028169
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 509588.33644859813
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 989667.2359550562
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 470789.2244897959
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 447935.3786407767
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 678490.3529411765
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 408295.0796460177
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 607070.3157894737
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 387708.7731092437
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 1441792.0
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 1258291.2
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 584017.0126582278
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 809427.0877192982
+    },
+    {
+      "step": 0,
+      "tokens_per_sec": 307582.29333333333
+    }
+  ],
+  "update_history": [
+    {
+      "update_id": 1,
+      "trainer_worker_id": 0,
+      "policy_version": 1,
+      "batch_id": 0,
+      "loss": 0.0,
+      "avg_reward": 0.16666666666666666,
+      "sample_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "timestamp": 1774901672.6948702
+    },
+    {
+      "update_id": 2,
+      "trainer_worker_id": 0,
+      "policy_version": 2,
+      "batch_id": 1,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        4,
+        5,
+        8,
+        9
+      ],
+      "timestamp": 1774901672.8260994
+    },
+    {
+      "update_id": 3,
+      "trainer_worker_id": 0,
+      "policy_version": 3,
+      "batch_id": 2,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        10,
+        11,
+        14,
+        15
+      ],
+      "timestamp": 1774901672.9720612
+    },
+    {
+      "update_id": 4,
+      "trainer_worker_id": 0,
+      "policy_version": 4,
+      "batch_id": 3,
+      "loss": 0.0,
+      "avg_reward": 0.5833333333333333,
+      "sample_ids": [
+        16,
+        17,
+        20,
+        21
+      ],
+      "timestamp": 1774901673.1129947
+    },
+    {
+      "update_id": 5,
+      "trainer_worker_id": 0,
+      "policy_version": 5,
+      "batch_id": 4,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        22,
+        23
+      ],
+      "timestamp": 1774901673.178661
+    }
+  ],
+  "effective_updates_per_second": 7.339250736759072,
+  "reward_per_second": 7.339250736759072,
+  "reward_per_update": 1.0,
+  "pass_rate_per_update": 0.8,
+  "config": {
+    "dataset": "data/tiny_coding_train.jsonl",
+    "epochs": 2,
+    "seed": 7,
+    "backend": "tiny_policy",
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "max_new_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "device": "auto",
+    "lr": 0.1,
+    "update_batch_size": 4,
+    "staleness_k": 1,
+    "queue_maxsize": 128,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "interrupt_check_interval_sec": 0.02,
+    "generation_chunk_size": 4,
+    "num_rollout_workers": 2,
+    "num_trainer_workers": 1,
+    "rollout_devices": "cpu,cpu",
+    "trainer_devices": "cpu"
+  }
+}

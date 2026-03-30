@@ -29,9 +29,11 @@ def _run_name_from_config(cfg):
     lr = cfg["lr"]
     p_delay = cfg.get("producer_delay_sec", 0.0)
     l_delay = cfg.get("learner_delay_sec", 0.0)
+    nr = cfg.get("num_rollout_workers", "na")
+    nt = cfg.get("num_trainer_workers", "na")
     return (
         "mode-{m}__k-{k}__seed-{s}__ub-{ub}__q-{q}__ep-{ep}__b-{b}__lr-{lr}"
-        "__pdelay-{pd}__ldelay-{ld}"
+        "__nr-{nr}__nt-{nt}__pdelay-{pd}__ldelay-{ld}"
     ).format(
         m=mode,
         k=staleness,
@@ -41,6 +43,8 @@ def _run_name_from_config(cfg):
         ep=ep,
         b=backend,
         lr=lr,
+        nr=nr,
+        nt=nt,
         pd=p_delay,
         ld=l_delay,
     )
@@ -49,10 +53,16 @@ def _run_name_from_config(cfg):
 def _build_command(cfg, run_dir):
     results_jsonl = run_dir / "results.jsonl"
     summary_json = run_dir / "summary.json"
+    module_name = "src.run_sync_baseline"
+    if cfg["mode"] == "async_train":
+        module_name = "src.run_async_baseline"
+    elif cfg["mode"] == "async_areal_style":
+        module_name = "src.run_async_areal_style"
+
     base = [
         sys.executable,
         "-m",
-        "src.run_sync_baseline" if cfg["mode"] == "sync_train" else "src.run_async_baseline",
+        module_name,
         "--dataset",
         cfg["dataset"],
         "--epochs",
@@ -91,6 +101,33 @@ def _build_command(cfg, run_dir):
                 str(cfg["learner_delay_sec"]),
             ]
         )
+    if cfg["mode"] == "async_areal_style":
+        base.extend(
+            [
+                "--staleness-k",
+                str(cfg["staleness_k"]),
+                "--queue-maxsize",
+                str(cfg["queue_maxsize"]),
+                "--queue-trace-interval-sec",
+                str(cfg["queue_trace_interval_sec"]),
+                "--producer-delay-sec",
+                str(cfg["producer_delay_sec"]),
+                "--learner-delay-sec",
+                str(cfg["learner_delay_sec"]),
+                "--num-rollout-workers",
+                str(cfg["num_rollout_workers"]),
+                "--num-trainer-workers",
+                str(cfg["num_trainer_workers"]),
+                "--rollout-devices",
+                cfg["rollout_devices"],
+                "--trainer-devices",
+                cfg["trainer_devices"],
+                "--interrupt-check-interval-sec",
+                str(cfg["interrupt_check_interval_sec"]),
+                "--generation-chunk-size",
+                str(cfg["generation_chunk_size"]),
+            ]
+        )
     return base
 
 
@@ -111,7 +148,7 @@ def parse_args():
     parser.add_argument("--output-root", default="results/experiments")
     parser.add_argument("--experiment-name", default="", help="Optional fixed name; defaults to timestamp.")
     parser.add_argument("--dataset", default="data/tiny_coding_train.jsonl")
-    parser.add_argument("--modes", default="sync_train,async_train")
+    parser.add_argument("--modes", default="sync_train,async_train,async_areal_style")
     parser.add_argument("--staleness-k-values", default="0,1,2,4")
     parser.add_argument("--seeds", default="0,1,2")
     parser.add_argument("--update-batch-sizes", default="4")
@@ -125,6 +162,12 @@ def parse_args():
     parser.add_argument("--producer-delay-sec", type=float, default=0.0)
     parser.add_argument("--learner-delay-sec", type=float, default=0.0)
     parser.add_argument("--hf-model-id", default="sshleifer/tiny-gpt2")
+    parser.add_argument("--num-rollout-workers-values", default="1")
+    parser.add_argument("--num-trainer-workers-values", default="1")
+    parser.add_argument("--rollout-devices", default="cpu")
+    parser.add_argument("--trainer-devices", default="cpu")
+    parser.add_argument("--interrupt-check-interval-sec", type=float, default=0.02)
+    parser.add_argument("--generation-chunk-size", type=int, default=4)
     parser.add_argument("--fail-fast", action="store_true")
     return parser.parse_args()
 
@@ -143,10 +186,12 @@ def main():
     epochs_values = _parse_csv_list(args.epochs_values, int)
     backend_values = _parse_csv_list(args.backend_values, str)
     lr_values = _parse_csv_list(args.lr_values, float)
+    num_rollout_workers_values = _parse_csv_list(args.num_rollout_workers_values, int)
+    num_trainer_workers_values = _parse_csv_list(args.num_trainer_workers_values, int)
 
     grid_rows = []
     for mode in modes:
-        if mode not in ("sync_train", "async_train"):
+        if mode not in ("sync_train", "async_train", "async_areal_style"):
             raise ValueError("Unsupported mode: %s" % mode)
         if mode == "sync_train":
             combos = itertools.product(seeds, update_batch_sizes, epochs_values, backend_values, lr_values)
@@ -165,7 +210,7 @@ def main():
                         "hf_model_id": args.hf_model_id,
                     }
                 )
-        else:
+        elif mode == "async_train":
             combos = itertools.product(
                 staleness_values,
                 seeds,
@@ -193,6 +238,44 @@ def main():
                         "producer_delay_sec": args.producer_delay_sec,
                         "learner_delay_sec": args.learner_delay_sec,
                         "hf_model_id": args.hf_model_id,
+                    }
+                )
+        else:
+            combos = itertools.product(
+                staleness_values,
+                seeds,
+                update_batch_sizes,
+                queue_maxsizes,
+                epochs_values,
+                backend_values,
+                lr_values,
+                num_rollout_workers_values,
+                num_trainer_workers_values,
+            )
+            for (k, seed, ub, q, epochs, backend, lr, nr, nt) in combos:
+                grid_rows.append(
+                    {
+                        "mode": mode,
+                        "dataset": args.dataset,
+                        "staleness_k": k,
+                        "seed": seed,
+                        "update_batch_size": ub,
+                        "queue_maxsize": q,
+                        "epochs": epochs,
+                        "backend": backend,
+                        "lr": lr,
+                        "max_new_tokens": args.max_new_tokens,
+                        "reward_timeout_sec": args.reward_timeout_sec,
+                        "queue_trace_interval_sec": args.queue_trace_interval_sec,
+                        "producer_delay_sec": args.producer_delay_sec,
+                        "learner_delay_sec": args.learner_delay_sec,
+                        "hf_model_id": args.hf_model_id,
+                        "num_rollout_workers": nr,
+                        "num_trainer_workers": nt,
+                        "rollout_devices": args.rollout_devices,
+                        "trainer_devices": args.trainer_devices,
+                        "interrupt_check_interval_sec": args.interrupt_check_interval_sec,
+                        "generation_chunk_size": args.generation_chunk_size,
                     }
                 )
 

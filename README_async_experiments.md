@@ -28,7 +28,7 @@ bash scripts/run_experiments.sh
 
 Default grid:
 
-- mode: `sync_train`, `async_train`
+- mode: `sync_train`, `async_train`, `async_areal_style`
 - staleness_k (async): `0,1,2,4`
 - seeds: `0,1,2`
 - update_batch_size: `4`
@@ -36,6 +36,11 @@ Default grid:
 - epochs: `2`
 - backend: `tiny_policy`
 - lr: `0.1`
+- AReaL worker topology defaults:
+  - `num_rollout_workers=1`
+  - `num_trainer_workers=1`
+  - `rollout_devices=cpu`
+  - `trainer_devices=cpu`
 
 Override any dimension with CLI args, for example:
 
@@ -44,6 +49,11 @@ bash scripts/run_experiments.sh \
   --seeds 10,11,12 \
   --lr-values 0.05,0.1 \
   --queue-maxsizes 32,64 \
+  --modes sync_train,async_train,async_areal_style \
+  --num-rollout-workers-values 1,2 \
+  --num-trainer-workers-values 1 \
+  --rollout-devices cpu,cpu \
+  --trainer-devices cpu \
   --producer-delay-sec 0.01 \
   --learner-delay-sec 0.02
 ```
@@ -113,6 +123,10 @@ Matplotlib is the only plotting dependency.
 
 - Lower `staleness_k` usually reduces stale updates but can increase dropped samples.
 - Higher `staleness_k` can improve acceptance but may increase policy lag effects.
+- Compare all three modes:
+  - `sync_train` (synchronous baseline)
+  - `async_train` (threaded async baseline)
+  - `async_areal_style` (multiprocess AReaL-style topology)
 - Compare:
   - reward/pass metrics (quality)
   - dropped/accepted fractions (data efficiency)

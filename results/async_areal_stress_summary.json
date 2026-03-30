@@ -1,0 +1,628 @@
+{
+  "mode": "async_areal_style",
+  "num_rollout_workers": 2,
+  "num_trainer_workers": 1,
+  "rollout_devices": [
+    "cpu",
+    "cpu"
+  ],
+  "trainer_devices": [
+    "cpu"
+  ],
+  "update_count": 12,
+  "final_policy_version": 12,
+  "num_total_seen": 72,
+  "num_accepted": 23,
+  "num_dropped": 49,
+  "accepted_fraction": 0.3194444444444444,
+  "dropped_fraction": 0.6805555555555556,
+  "mean_staleness": 0.7391304347826086,
+  "max_staleness": 1,
+  "avg_reward": 0.3188405797101449,
+  "pass_rate": 0.2608695652173913,
+  "wall_clock_sec": 1.7238166332244873,
+  "avg_tokens_per_sec": 650174.5837160267,
+  "queue_depth_trace": [
+    {
+      "t_sec": 0.10288596153259277,
+      "rollout_queue_depth": 2,
+      "trainer_queue_depth": 1
+    },
+    {
+      "t_sec": 0.23346185684204102,
+      "rollout_queue_depth": 6,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.36211490631103516,
+      "rollout_queue_depth": 7,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.4874114990234375,
+      "rollout_queue_depth": 8,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.615166425704956,
+      "rollout_queue_depth": 10,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.7403459548950195,
+      "rollout_queue_depth": 12,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.8661043643951416,
+      "rollout_queue_depth": 14,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.9942853450775146,
+      "rollout_queue_depth": 18,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.121196985244751,
+      "rollout_queue_depth": 18,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.247009038925171,
+      "rollout_queue_depth": 18,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.3728101253509521,
+      "rollout_queue_depth": 14,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.5002665519714355,
+      "rollout_queue_depth": 10,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.6279609203338623,
+      "rollout_queue_depth": 6,
+      "trainer_queue_depth": 0
+    }
+  ],
+  "replay_buffer_size_trace": [
+    {
+      "t_sec": 0.10288596153259277,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.23346185684204102,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.36211490631103516,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.4874114990234375,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.615166425704956,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.7403459548950195,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.8661043643951416,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 0.9942853450775146,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.121196985244751,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.247009038925171,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.3728101253509521,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.5002665519714355,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.6279609203338623,
+      "replay_buffer_size": 1
+    }
+  ],
+  "per_rollout_worker_generated_count": {
+    "1": 26,
+    "0": 26
+  },
+  "per_rollout_worker_interrupt_count": {
+    "1": 10,
+    "0": 10
+  },
+  "per_rollout_worker_last_loaded_policy_version": {
+    "1": 10,
+    "0": 10
+  },
+  "per_trainer_worker_update_count": {
+    "0": 12
+  },
+  "interrupted_samples_count": 20,
+  "reward_by_step": [
+    {
+      "step": 1,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 2,
+      "reward": 0.3333333333333333
+    },
+    {
+      "step": 3,
+      "reward": 0.0
+    },
+    {
+      "step": 4,
+      "reward": 0.0
+    },
+    {
+      "step": 5,
+      "reward": 0.0
+    },
+    {
+      "step": 10,
+      "reward": 1.0
+    },
+    {
+      "step": 9,
+      "reward": 1.0
+    },
+    {
+      "step": 14,
+      "reward": 0.0
+    },
+    {
+      "step": 13,
+      "reward": 0.0
+    },
+    {
+      "step": 20,
+      "reward": 0.0
+    },
+    {
+      "step": 19,
+      "reward": 0.0
+    },
+    {
+      "step": 23,
+      "reward": 1.0
+    },
+    {
+      "step": 24,
+      "reward": 1.0
+    },
+    {
+      "step": 31,
+      "reward": 0.0
+    },
+    {
+      "step": 32,
+      "reward": 0.0
+    },
+    {
+      "step": 35,
+      "reward": 0.0
+    },
+    {
+      "step": 36,
+      "reward": 0.0
+    },
+    {
+      "step": 48,
+      "reward": 0.0
+    },
+    {
+      "step": 47,
+      "reward": 0.6666666666666666
+    },
+    {
+      "step": 52,
+      "reward": 0.0
+    },
+    {
+      "step": 51,
+      "reward": 0.0
+    },
+    {
+      "step": 70,
+      "reward": 1.0
+    },
+    {
+      "step": 69,
+      "reward": 1.0
+    }
+  ],
+  "pass_rate_by_step": [
+    {
+      "step": 1,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 2,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 3,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 4,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 5,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 10,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 9,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 14,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 13,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 20,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 19,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 23,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 24,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 31,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 32,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 35,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 36,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 48,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 47,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 52,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 51,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 70,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 69,
+      "pass_rate": 1.0
+    }
+  ],
+  "tokens_per_sec_by_step": [
+    {
+      "step": 1,
+      "tokens_per_sec": 285569.6340425532
+    },
+    {
+      "step": 2,
+      "tokens_per_sec": 285569.6340425532
+    },
+    {
+      "step": 3,
+      "tokens_per_sec": 458752.0
+    },
+    {
+      "step": 4,
+      "tokens_per_sec": 747499.7227722772
+    },
+    {
+      "step": 5,
+      "tokens_per_sec": 349525.3333333333
+    },
+    {
+      "step": 10,
+      "tokens_per_sec": 408295.0796460177
+    },
+    {
+      "step": 9,
+      "tokens_per_sec": 283216.6688102894
+    },
+    {
+      "step": 14,
+      "tokens_per_sec": 427197.6296296296
+    },
+    {
+      "step": 13,
+      "tokens_per_sec": 269809.02923976607
+    },
+    {
+      "step": 20,
+      "tokens_per_sec": 613800.5853658536
+    },
+    {
+      "step": 19,
+      "tokens_per_sec": 352791.92523364484
+    },
+    {
+      "step": 23,
+      "tokens_per_sec": 575025.5483870967
+    },
+    {
+      "step": 24,
+      "tokens_per_sec": 164776.22857142857
+    },
+    {
+      "step": 31,
+      "tokens_per_sec": 1415577.6
+    },
+    {
+      "step": 32,
+      "tokens_per_sec": 585251.7209302326
+    },
+    {
+      "step": 35,
+      "tokens_per_sec": 659104.9142857143
+    },
+    {
+      "step": 36,
+      "tokens_per_sec": 188315.68979591836
+    },
+    {
+      "step": 48,
+      "tokens_per_sec": 1177348.49122807
+    },
+    {
+      "step": 47,
+      "tokens_per_sec": 2240792.5479452056
+    },
+    {
+      "step": 52,
+      "tokens_per_sec": 1143901.0909090908
+    },
+    {
+      "step": 51,
+      "tokens_per_sec": 838860.8
+    },
+    {
+      "step": 70,
+      "tokens_per_sec": 555871.6144578314
+    },
+    {
+      "step": 69,
+      "tokens_per_sec": 927161.9368421052
+    }
+  ],
+  "update_history": [
+    {
+      "update_id": 1,
+      "trainer_worker_id": 0,
+      "policy_version": 1,
+      "batch_id": 0,
+      "loss": 0.0,
+      "avg_reward": 0.3333333333333333,
+      "sample_ids": [
+        0,
+        1
+      ],
+      "timestamp": 1774901697.4804618
+    },
+    {
+      "update_id": 2,
+      "trainer_worker_id": 0,
+      "policy_version": 2,
+      "batch_id": 1,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        2,
+        3
+      ],
+      "timestamp": 1774901697.5435216
+    },
+    {
+      "update_id": 3,
+      "trainer_worker_id": 0,
+      "policy_version": 3,
+      "batch_id": 2,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        4,
+        9
+      ],
+      "timestamp": 1774901697.640284
+    },
+    {
+      "update_id": 4,
+      "trainer_worker_id": 0,
+      "policy_version": 4,
+      "batch_id": 3,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        8,
+        13
+      ],
+      "timestamp": 1774901697.7039397
+    },
+    {
+      "update_id": 5,
+      "trainer_worker_id": 0,
+      "policy_version": 5,
+      "batch_id": 4,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        12,
+        19
+      ],
+      "timestamp": 1774901697.8315892
+    },
+    {
+      "update_id": 6,
+      "trainer_worker_id": 0,
+      "policy_version": 6,
+      "batch_id": 5,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        18,
+        22
+      ],
+      "timestamp": 1774901697.8930595
+    },
+    {
+      "update_id": 7,
+      "trainer_worker_id": 0,
+      "policy_version": 7,
+      "batch_id": 6,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        23,
+        30
+      ],
+      "timestamp": 1774901698.084094
+    },
+    {
+      "update_id": 8,
+      "trainer_worker_id": 0,
+      "policy_version": 8,
+      "batch_id": 7,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        31,
+        34
+      ],
+      "timestamp": 1774901698.1464415
+    },
+    {
+      "update_id": 9,
+      "trainer_worker_id": 0,
+      "policy_version": 9,
+      "batch_id": 8,
+      "loss": 0.0,
+      "avg_reward": 0.0,
+      "sample_ids": [
+        35,
+        47
+      ],
+      "timestamp": 1774901698.4642313
+    },
+    {
+      "update_id": 10,
+      "trainer_worker_id": 0,
+      "policy_version": 10,
+      "batch_id": 9,
+      "loss": 0.0,
+      "avg_reward": 0.3333333333333333,
+      "sample_ids": [
+        46,
+        51
+      ],
+      "timestamp": 1774901698.5273478
+    },
+    {
+      "update_id": 11,
+      "trainer_worker_id": 0,
+      "policy_version": 11,
+      "batch_id": 10,
+      "loss": 0.0,
+      "avg_reward": 0.5,
+      "sample_ids": [
+        50,
+        69
+      ],
+      "timestamp": 1774901699.034788
+    },
+    {
+      "update_id": 12,
+      "trainer_worker_id": 0,
+      "policy_version": 12,
+      "batch_id": 11,
+      "loss": 0.0,
+      "avg_reward": 1.0,
+      "sample_ids": [
+        68
+      ],
+      "timestamp": 1774901699.0670536
+    }
+  ],
+  "effective_updates_per_second": 6.961297256746725,
+  "reward_per_second": 4.254126101345221,
+  "reward_per_update": 0.611111111111111,
+  "pass_rate_per_update": 0.5,
+  "config": {
+    "dataset": "data/tiny_coding_train.jsonl",
+    "epochs": 6,
+    "seed": 7,
+    "backend": "tiny_policy",
+    "hf_model_id": "sshleifer/tiny-gpt2",
+    "max_new_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "device": "auto",
+    "lr": 0.1,
+    "update_batch_size": 2,
+    "staleness_k": 1,
+    "queue_maxsize": 256,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.03,
+    "interrupt_check_interval_sec": 0.005,
+    "generation_chunk_size": 8,
+    "num_rollout_workers": 2,
+    "num_trainer_workers": 1,
+    "rollout_devices": "cpu,cpu",
+    "trainer_devices": "cpu"
+  }
+}
