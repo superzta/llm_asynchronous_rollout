@@ -1,4 +1,4 @@
-# `llm_async_project`: A Lightweight AReaL-Style Async RL System for LLM Reasoning
+# `llm_asynchronous_rollout`: A Lightweight AReaL-Style Async RL System for LLM Reasoning
 
 [Qwen 2.5](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct) · PPO/GRPO · Bounded staleness · 2× V100 32 GB
 
@@ -130,7 +130,7 @@ Each writes a `summary.json` with identical core fields (reward, pass rate, toke
 ## Repository layout
 
 ```
-llm_async_project/
+llm_asynchronous_rollout/
 ├── README.md                              ← you are here
 ├── data/
 │   ├── gsm8k_train.jsonl, gsm8k_eval.jsonl        GSM8K (auto-downloaded on first run)
@@ -264,7 +264,7 @@ The single source of truth is **`scripts/run_final_report.sh`**. It runs the com
 Interactive (recommended for iteration):
 
 ```bash
-cd /ocean/projects/cis260009p/$USER/repos/llm_async_project
+cd /ocean/projects/cis260009p/$USER/repos/llm_asynchronous_rollout
 source ~/workspace/psc_slime_env.sh
 
 TASK_LIMIT=128 \
