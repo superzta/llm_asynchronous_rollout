@@ -1,0 +1,67 @@
+# ---- Python / caches ----------------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Virtualenvs / package managers ------------------------------------
+.venv/
+venv/
+env/
+.env
+.python-version
+uv.lock.local
+.uv_cache/
+
+# ---- Editor / OS ---------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*.bak
+
+# ---- Experiment outputs (large, reproducible, do not commit) -----------
+results/
+results_*/
+experiments/
+logs/
+runs/
+wandb/
+tensorboard/
+*.log
+
+# ---- Model / dataset caches --------------------------------------------
+checkpoints/
+huggingface_cache/
+hf_cache/
+.cache/
+triton_cache/
+inductor_cache/
+
+# ---- Generated artifacts ------------------------------------------------
+*.pt
+*.bin
+*.safetensors
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# ---- Plot / analysis outputs that live with results --------------------
+*.png
+*.pdf
+!docs/**/*.png
+!docs/**/*.pdf
+
+# ---- Temp / scratch -----------------------------------------------------
+tmp/
+scratch/
+*.tmp

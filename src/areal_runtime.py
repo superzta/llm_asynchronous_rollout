@@ -54,6 +54,7 @@ def run_areal_style(args):
     rollout_sample_queue = mp.Queue(maxsize=args.queue_maxsize)
     rollout_status_queue = mp.Queue()
     trainer_status_queue = mp.Queue()
+    event_queue = mp.Queue(maxsize=max(args.queue_maxsize * 4, 256))
 
     rollout_task_queues = []
     for _ in range(args.num_rollout_workers):
@@ -73,6 +74,7 @@ def run_areal_style(args):
             global_update_count_value,
             trainer_update_counts,
             stop_event,
+            event_queue,
         ),
         daemon=True,
     )
@@ -94,6 +96,8 @@ def run_areal_style(args):
                 stop_event,
                 args.interrupt_check_interval_sec,
                 args.generation_chunk_size,
+                args.rollout_chunk_delay_sec,
+                event_queue,
             ),
             daemon=True,
         )
@@ -115,6 +119,7 @@ def run_areal_style(args):
                 policy_version_value,
                 stop_event,
                 args.learner_delay_sec,
+                event_queue,
             ),
             daemon=True,
         )
@@ -129,6 +134,7 @@ def run_areal_style(args):
         trainer_queues=trainer_input_queues,
         parameter_commit_queue=parameter_commit_queue,
         policy_version_value=policy_version_value,
+        event_queue=event_queue,
     )
 
     for q in trainer_input_queues:
@@ -161,6 +167,12 @@ def run_areal_style(args):
     accepted_rows = controller_out["accepted_rows"]
     dropped_rows = controller_out["dropped_rows"]
     rows = controller_out["rows"]
+    events = list(controller_out.get("events", []))
+    while True:
+        try:
+            events.append(event_queue.get_nowait())
+        except Exception:
+            break
 
     rewards = [float(r.get("reward", 0.0)) for r in accepted_rows]
     pass_vals = [1.0 if r.get("pass", False) else 0.0 for r in accepted_rows]
@@ -185,6 +197,8 @@ def run_areal_style(args):
         "num_total_seen": int(total_seen),
         "num_accepted": int(accepted),
         "num_dropped": int(dropped),
+        "dropped_stale_count": int(controller_out.get("dropped_stale_count", 0)),
+        "dropped_interrupted_count": int(controller_out.get("dropped_interrupted_count", 0)),
         "accepted_fraction": accepted / max(total_seen, 1.0),
         "dropped_fraction": dropped / max(total_seen, 1.0),
         "mean_staleness": _safe_mean([float(x) for x in staleness_vals]),
@@ -212,10 +226,27 @@ def run_areal_style(args):
             for worker_id, info in trainer_worker_stats.items()
         },
         "interrupted_samples_count": int(controller_out["interrupted_samples"]),
+        "interrupt_count_total": int(
+            sum([int(info.get("interrupt_count", 0)) for info in rollout_worker_stats.values()])
+        ),
+        "per_rollout_worker_loaded_versions": {
+            worker_id: list(info.get("loaded_versions", [])) for worker_id, info in rollout_worker_stats.items()
+        },
         "reward_by_step": controller_out["reward_by_step"],
         "pass_rate_by_step": controller_out["pass_rate_by_step"],
         "tokens_per_sec_by_step": controller_out["tokens_per_sec_by_step"],
         "update_history": controller_out["update_history"],
+        "version_change_events": [
+            e for e in events if e.get("type") == "version_change"
+        ],
+        "trainer_commit_timestamps": [
+            float(e.get("timestamp", 0.0)) for e in events if e.get("type") in ("controller_trainer_commit", "version_change")
+        ],
+        "rollout_emit_timestamps": [
+            float(e.get("timestamp", 0.0)) for e in events if e.get("type") == "rollout_emit"
+        ],
+        "staleness_histogram": {},
+        "event_trace": events,
         "effective_updates_per_second": update_count / max(wall_clock_sec, 1e-9),
         "reward_per_second": total_reward / max(wall_clock_sec, 1e-9),
         "reward_per_update": total_reward / max(float(update_count), 1.0),
@@ -238,10 +269,23 @@ def run_areal_style(args):
             "learner_delay_sec": args.learner_delay_sec,
             "interrupt_check_interval_sec": args.interrupt_check_interval_sec,
             "generation_chunk_size": args.generation_chunk_size,
+            "rollout_chunk_delay_sec": args.rollout_chunk_delay_sec,
+            "replay_dispatch_delay_sec": args.replay_dispatch_delay_sec,
+            "controller_consume_delay_sec": args.controller_consume_delay_sec,
+            "max_interrupt_retries": args.max_interrupt_retries,
             "num_rollout_workers": args.num_rollout_workers,
             "num_trainer_workers": args.num_trainer_workers,
             "rollout_devices": args.rollout_devices,
             "trainer_devices": args.trainer_devices,
         },
     }
+    terminal_seen = float(int(controller_out.get("num_accepted", 0)) + int(controller_out.get("num_dropped", 0)))
+    summary["num_terminal_seen"] = int(terminal_seen)
+    summary["accepted_fraction_terminal"] = accepted / max(terminal_seen, 1.0)
+    summary["dropped_fraction_terminal"] = dropped / max(terminal_seen, 1.0)
+    histogram = {}
+    for value in staleness_vals:
+        key = str(int(value))
+        histogram[key] = int(histogram.get(key, 0)) + 1
+    summary["staleness_histogram"] = histogram
     return {"rows": rows, "summary": summary}

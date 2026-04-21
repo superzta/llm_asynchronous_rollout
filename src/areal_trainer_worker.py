@@ -14,6 +14,13 @@ def _resolve_device(device):
     return device
 
 
+def _emit_event(event_queue, payload):
+    try:
+        event_queue.put_nowait(payload)
+    except queue.Full:
+        pass
+
+
 def run_trainer_worker(
     worker_id,
     device,
@@ -25,6 +32,7 @@ def run_trainer_worker(
     policy_version_value,
     stop_event,
     learner_delay_sec,
+    event_queue,
 ):
     worker_device = _resolve_device(device)
     local_backend = backend.clone_for_device(worker_device)
@@ -47,12 +55,31 @@ def run_trainer_worker(
             local_backend.load_trainable_state(shared_state.get("trainable_state", {}))
             local_version = latest_version
             last_seen_policy_version = latest_version
+            _emit_event(
+                event_queue,
+                {
+                    "type": "trainer_load_version",
+                    "worker_id": int(worker_id),
+                    "loaded_version": int(local_version),
+                    "timestamp": time.time(),
+                },
+            )
 
         batch_id = payload["batch_id"]
         sample_ids = list(payload["sample_ids"])
         train_samples = list(payload["train_samples"])
 
         update_info = local_backend.policy_gradient_update(train_samples)
+        _emit_event(
+            event_queue,
+            {
+                "type": "trainer_update_computed",
+                "worker_id": int(worker_id),
+                "batch_id": int(batch_id),
+                "updated": bool(update_info.get("updated", False)),
+                "timestamp": time.time(),
+            },
+        )
         if learner_delay_sec > 0:
             time.sleep(learner_delay_sec)
 

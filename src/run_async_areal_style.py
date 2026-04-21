@@ -26,6 +26,10 @@ def parse_args():
     parser.add_argument("--learner-delay-sec", type=float, default=0.0)
     parser.add_argument("--interrupt-check-interval-sec", type=float, default=0.02)
     parser.add_argument("--generation-chunk-size", type=int, default=4)
+    parser.add_argument("--rollout-chunk-delay-sec", type=float, default=0.0)
+    parser.add_argument("--replay-dispatch-delay-sec", type=float, default=0.0)
+    parser.add_argument("--controller-consume-delay-sec", type=float, default=0.0)
+    parser.add_argument("--max-interrupt-retries", type=int, default=2)
     parser.add_argument("--max-new-tokens", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--top-p", type=float, default=1.0)
@@ -34,6 +38,16 @@ def parse_args():
     parser.add_argument("--reward-timeout-sec", type=float, default=2.0)
     parser.add_argument("--results-jsonl", default="results/async_areal_results.jsonl")
     parser.add_argument("--summary-json", default="results/async_areal_summary.json")
+    parser.add_argument("--hf-dtype", default="float16")
+    parser.add_argument("--hf-attn-impl", default="sdpa")
+    parser.add_argument("--hf-chat-template", type=int, default=1)
+    parser.add_argument("--grpo-epsilon", type=float, default=0.2)
+    parser.add_argument("--grpo-kl-coef", type=float, default=0.02)
+    parser.add_argument("--grpo-group-size", type=int, default=0)
+    parser.add_argument("--grad-clip", type=float, default=1.0)
+    parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument("--decoupled-objective", type=int, default=1,
+                        help="1=PPO-clip with stored old logprobs (AReaL); 0=naive PPO")
     return parser.parse_args()
 
 

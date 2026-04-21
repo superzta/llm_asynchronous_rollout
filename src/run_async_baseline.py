@@ -40,6 +40,16 @@ def parse_args():
     parser.add_argument("--learner-delay-sec", type=float, default=0.0)
     parser.add_argument("--results-jsonl", default="results/async_train_results.jsonl")
     parser.add_argument("--summary-json", default="results/async_train_summary.json")
+    parser.add_argument("--hf-dtype", default="float16")
+    parser.add_argument("--hf-attn-impl", default="sdpa")
+    parser.add_argument("--hf-chat-template", type=int, default=1)
+    parser.add_argument("--grpo-epsilon", type=float, default=0.2)
+    parser.add_argument("--grpo-kl-coef", type=float, default=0.02)
+    parser.add_argument("--grpo-group-size", type=int, default=0)
+    parser.add_argument("--grad-clip", type=float, default=1.0)
+    parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument("--decoupled-objective", type=int, default=1,
+                        help="1=PPO-clip with stored old logprobs (AReaL); 0=naive PPO")
     return parser.parse_args()
 
 

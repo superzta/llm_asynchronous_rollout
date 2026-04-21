@@ -16,6 +16,13 @@ def _resolve_device(device):
     return device
 
 
+def _emit_event(event_queue, payload):
+    try:
+        event_queue.put_nowait(payload)
+    except queue.Full:
+        pass
+
+
 def run_rollout_worker(
     worker_id,
     device,
@@ -28,6 +35,8 @@ def run_rollout_worker(
     stop_event,
     interrupt_check_interval_sec,
     generation_chunk_size,
+    rollout_chunk_delay_sec,
+    event_queue,
 ):
     worker_device = _resolve_device(device)
     local_backend = backend.clone_for_device(worker_device)
@@ -38,6 +47,7 @@ def run_rollout_worker(
     interrupt_count = 0
     interrupted_samples = 0
     last_loaded_policy_version = local_version
+    loaded_versions = [int(local_version)]
 
     while not stop_event.is_set():
         try:
@@ -52,6 +62,7 @@ def run_rollout_worker(
         prompt = payload["prompt"]
         enqueue_time = float(payload["enqueue_time"])
         step = int(payload.get("step", 0))
+        retry_count = int(payload.get("retry_count", 0))
 
         generation_state = None
         interrupted = False
@@ -62,9 +73,31 @@ def run_rollout_worker(
                 interrupt_count += 1
                 interrupted_samples += 1
                 interrupted = True
+                _emit_event(
+                    event_queue,
+                    {
+                        "type": "rollout_interrupt_observed",
+                        "worker_id": int(worker_id),
+                        "sample_id": int(sample_id),
+                        "old_version": int(local_version),
+                        "new_version": int(global_version),
+                        "timestamp": time.time(),
+                    },
+                )
                 local_backend.load_trainable_state(shared_state.get("trainable_state", {}))
                 local_version = global_version
                 last_loaded_policy_version = local_version
+                loaded_versions.append(int(local_version))
+                _emit_event(
+                    event_queue,
+                    {
+                        "type": "rollout_load_version",
+                        "worker_id": int(worker_id),
+                        "sample_id": int(sample_id),
+                        "loaded_version": int(local_version),
+                        "timestamp": time.time(),
+                    },
+                )
                 break
 
             chunk_result = local_backend.maybe_generate_chunk(
@@ -95,11 +128,24 @@ def run_rollout_worker(
                         "metadata": dict(result.metadata),
                         "interrupted": False,
                         "step": step,
+                        "retry_count": retry_count,
                     }
+                )
+                _emit_event(
+                    event_queue,
+                    {
+                        "type": "rollout_emit",
+                        "worker_id": int(worker_id),
+                        "sample_id": int(sample_id),
+                        "policy_version": int(local_version),
+                        "timestamp": time.time(),
+                    },
                 )
                 break
 
             generation_state = chunk_result.get("generation_state")
+            if rollout_chunk_delay_sec > 0:
+                time.sleep(rollout_chunk_delay_sec)
             if interrupt_check_interval_sec > 0:
                 time.sleep(interrupt_check_interval_sec)
 
@@ -123,7 +169,18 @@ def run_rollout_worker(
                     "metadata": {},
                     "interrupted": True,
                     "step": step,
+                    "retry_count": retry_count,
                 }
+            )
+            _emit_event(
+                event_queue,
+                {
+                    "type": "rollout_sample_interrupted",
+                    "worker_id": int(worker_id),
+                    "sample_id": int(sample_id),
+                    "policy_version": int(local_version),
+                    "timestamp": time.time(),
+                },
             )
 
     status_queue.put(
@@ -133,6 +190,7 @@ def run_rollout_worker(
             "interrupt_count": int(interrupt_count),
             "interrupted_samples": int(interrupted_samples),
             "last_loaded_policy_version": int(last_loaded_policy_version),
+            "loaded_versions": loaded_versions,
             "device": worker_device,
         }
     )

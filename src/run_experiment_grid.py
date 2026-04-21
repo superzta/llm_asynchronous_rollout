@@ -31,9 +31,10 @@ def _run_name_from_config(cfg):
     l_delay = cfg.get("learner_delay_sec", 0.0)
     nr = cfg.get("num_rollout_workers", "na")
     nt = cfg.get("num_trainer_workers", "na")
+    dec = cfg.get("decoupled_objective", 1)
     return (
         "mode-{m}__k-{k}__seed-{s}__ub-{ub}__q-{q}__ep-{ep}__b-{b}__lr-{lr}"
-        "__nr-{nr}__nt-{nt}__pdelay-{pd}__ldelay-{ld}"
+        "__nr-{nr}__nt-{nt}__pdelay-{pd}__ldelay-{ld}__dec-{dec}"
     ).format(
         m=mode,
         k=staleness,
@@ -47,6 +48,7 @@ def _run_name_from_config(cfg):
         nt=nt,
         pd=p_delay,
         ld=l_delay,
+        dec=dec,
     )
 
 
@@ -86,6 +88,22 @@ def _build_command(cfg, run_dir):
     ]
     if cfg.get("hf_model_id"):
         base.extend(["--hf-model-id", cfg["hf_model_id"]])
+    for k, flag in [
+        ("hf_dtype", "--hf-dtype"),
+        ("hf_attn_impl", "--hf-attn-impl"),
+        ("hf_chat_template", "--hf-chat-template"),
+        ("grpo_epsilon", "--grpo-epsilon"),
+        ("grpo_kl_coef", "--grpo-kl-coef"),
+        ("grpo_group_size", "--grpo-group-size"),
+        ("grad_clip", "--grad-clip"),
+        ("weight_decay", "--weight-decay"),
+        ("decoupled_objective", "--decoupled-objective"),
+        ("temperature", "--temperature"),
+        ("top_p", "--top-p"),
+        ("device", "--device"),
+    ]:
+        if k in cfg and cfg[k] is not None and cfg[k] != "":
+            base.extend([flag, str(cfg[k])])
     if cfg["mode"] == "async_train":
         base.extend(
             [
@@ -126,6 +144,14 @@ def _build_command(cfg, run_dir):
                 str(cfg["interrupt_check_interval_sec"]),
                 "--generation-chunk-size",
                 str(cfg["generation_chunk_size"]),
+                "--rollout-chunk-delay-sec",
+                str(cfg["rollout_chunk_delay_sec"]),
+                "--replay-dispatch-delay-sec",
+                str(cfg["replay_dispatch_delay_sec"]),
+                "--controller-consume-delay-sec",
+                str(cfg["controller_consume_delay_sec"]),
+                "--max-interrupt-retries",
+                str(cfg["max_interrupt_retries"]),
             ]
         )
     return base
@@ -168,6 +194,26 @@ def parse_args():
     parser.add_argument("--trainer-devices", default="cpu")
     parser.add_argument("--interrupt-check-interval-sec", type=float, default=0.02)
     parser.add_argument("--generation-chunk-size", type=int, default=4)
+    parser.add_argument("--rollout-chunk-delay-sec", type=float, default=0.0)
+    parser.add_argument("--replay-dispatch-delay-sec", type=float, default=0.0)
+    parser.add_argument("--controller-consume-delay-sec", type=float, default=0.0)
+    parser.add_argument("--max-interrupt-retries", type=int, default=2)
+    parser.add_argument("--hf-dtype", default="float32")
+    parser.add_argument("--hf-attn-impl", default="eager")
+    parser.add_argument("--hf-chat-template", type=int, default=1)
+    parser.add_argument("--grpo-epsilon", type=float, default=0.2)
+    parser.add_argument("--grpo-kl-coef", type=float, default=0.02)
+    parser.add_argument("--grpo-group-size", type=int, default=0)
+    parser.add_argument("--grad-clip", type=float, default=1.0)
+    parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument(
+        "--decoupled-objective-values",
+        default="1",
+        help="CSV of 0/1 toggles to sweep for decoupled-objective ablation.",
+    )
+    parser.add_argument("--temperature", type=float, default=1.0)
+    parser.add_argument("--top-p", type=float, default=1.0)
+    parser.add_argument("--device", default="auto")
     parser.add_argument("--fail-fast", action="store_true")
     return parser.parse_args()
 
@@ -188,6 +234,22 @@ def main():
     lr_values = _parse_csv_list(args.lr_values, float)
     num_rollout_workers_values = _parse_csv_list(args.num_rollout_workers_values, int)
     num_trainer_workers_values = _parse_csv_list(args.num_trainer_workers_values, int)
+
+    # Shared HF/GRPO config appended to every row.
+    shared_hf = {
+        "hf_dtype": args.hf_dtype,
+        "hf_attn_impl": args.hf_attn_impl,
+        "hf_chat_template": args.hf_chat_template,
+        "grpo_epsilon": args.grpo_epsilon,
+        "grpo_kl_coef": args.grpo_kl_coef,
+        "grpo_group_size": args.grpo_group_size,
+        "grad_clip": args.grad_clip,
+        "weight_decay": args.weight_decay,
+        "temperature": args.temperature,
+        "top_p": args.top_p,
+        "device": args.device,
+    }
+    decoupled_values = _parse_csv_list(args.decoupled_objective_values, int)
 
     grid_rows = []
     for mode in modes:
@@ -276,8 +338,28 @@ def main():
                         "trainer_devices": args.trainer_devices,
                         "interrupt_check_interval_sec": args.interrupt_check_interval_sec,
                         "generation_chunk_size": args.generation_chunk_size,
+                        "rollout_chunk_delay_sec": args.rollout_chunk_delay_sec,
+                        "replay_dispatch_delay_sec": args.replay_dispatch_delay_sec,
+                        "controller_consume_delay_sec": args.controller_consume_delay_sec,
+                        "max_interrupt_retries": args.max_interrupt_retries,
                     }
                 )
+
+    # Expand grid across decoupled_objective axis.
+    if len(decoupled_values) > 1 or (len(decoupled_values) == 1 and decoupled_values[0] != 1):
+        expanded = []
+        for row in grid_rows:
+            for dv in decoupled_values:
+                r = dict(row)
+                r["decoupled_objective"] = int(dv)
+                expanded.append(r)
+        grid_rows = expanded
+
+    # Merge shared HF/GRPO config into every row.
+    for row in grid_rows:
+        for k, v in shared_hf.items():
+            row.setdefault(k, v)
+        row.setdefault("decoupled_objective", 1)
 
     manifest = {
         "experiment_name": experiment_name,

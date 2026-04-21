@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple, Union
 
 from src.coding_task import CodingTask
+from src.gsm8k_reward import evaluate_gsm8k_response
 
 
 PYTHON_FENCE_RE = re.compile(r"```python\s*(.*?)```", re.IGNORECASE | re.DOTALL)
@@ -106,6 +107,8 @@ def evaluate_response(
 ):
     # type: (str, Union[CodingTask, Dict[str, Any]], float) -> Dict[str, Any]
     task_obj = _coerce_task(task)
+    if task_obj.task_type == "gsm8k":
+        return evaluate_gsm8k_response(response_text=response_text, task=task_obj)
     code = extract_python_code(response_text)
     if not code:
         return {

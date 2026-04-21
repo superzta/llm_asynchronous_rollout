@@ -13,13 +13,19 @@ python3 -m src.run_async_areal_style \
   --num-trainer-workers 1 \
   --rollout-devices cuda:0,cuda:0 \
   --trainer-devices cuda:1 \
-  --epochs 2 \
+  --epochs 3 \
   --seed 7 \
   --lr 0.1 \
-  --update-batch-size 4 \
+  --update-batch-size 2 \
   --staleness-k 1 \
   --queue-maxsize 128 \
+  --producer-delay-sec 0.0 \
+  --learner-delay-sec 0.02 \
   --interrupt-check-interval-sec 0.02 \
-  --generation-chunk-size 4 \
-  --results-jsonl results/async_areal_results.jsonl \
-  --summary-json results/async_areal_summary.json
+  --generation-chunk-size 2 \
+  --rollout-chunk-delay-sec 0.01 \
+  --replay-dispatch-delay-sec 0.005 \
+  --controller-consume-delay-sec 0.003 \
+  --max-interrupt-retries 2 \
+  --results-jsonl results/async_areal_debug_results.jsonl \
+  --summary-json results/async_areal_debug_summary.json
