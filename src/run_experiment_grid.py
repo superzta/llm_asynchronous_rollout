@@ -63,6 +63,7 @@ def _build_command(cfg, run_dir):
 
     base = [
         sys.executable,
+        "-u",
         "-m",
         module_name,
         "--dataset",
@@ -382,14 +383,31 @@ def main():
         (run_dir / "command.txt").write_text(cmd_str + "\n", encoding="utf-8")
 
         print("[%d/%d] Running %s" % (idx, len(grid_rows), run_name), flush=True)
-        proc = subprocess.run(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            universal_newlines=True,
+        # Stream subprocess output live (so users can see progress in tee/tail),
+        # while also persisting it to the per-run log file.
+        env = os.environ.copy()
+        env.setdefault("PYTHONUNBUFFERED", "1")
+        log_path = run_dir / "stdout.log"
+        tag = "[%d/%d %s]" % (idx, len(grid_rows), run_name[:56])
+        with open(log_path, "w", buffering=1, encoding="utf-8") as log_fh:
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                universal_newlines=True,
+                bufsize=1,
+                env=env,
+            )
+            assert proc.stdout is not None
+            for line in proc.stdout:
+                sys.stdout.write(tag + " " + line)
+                sys.stdout.flush()
+                log_fh.write(line)
+            rc = proc.wait()
+            proc.returncode = rc
+        (run_dir / "stderr.log").write_text(
+            "(merged into stdout.log)\n", encoding="utf-8"
         )
-        (run_dir / "stdout.log").write_text(proc.stdout or "", encoding="utf-8")
-        (run_dir / "stderr.log").write_text(proc.stderr or "", encoding="utf-8")
 
         summary_path = run_dir / "summary.json"
         run_record = dict(cfg)

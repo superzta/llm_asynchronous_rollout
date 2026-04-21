@@ -1,4 +1,6 @@
+import copy
 import queue
+import sys
 import time
 
 
@@ -21,10 +23,27 @@ def _emit_event(event_queue, payload):
         pass
 
 
+def _build_local_backend(args, worker_device, tag):
+    """Build a backend in the worker process on its assigned device.
+
+    See comment in areal_rollout_worker._build_local_backend for rationale.
+    """
+    from src.model_backends import build_backend
+
+    sys.stderr.write("[%s] building backend on %s ...\n" % (tag, worker_device))
+    sys.stderr.flush()
+    local_args = copy.copy(args)
+    local_args.device = worker_device
+    backend = build_backend(local_args)
+    sys.stderr.write("[%s] backend ready on %s\n" % (tag, worker_device))
+    sys.stderr.flush()
+    return backend
+
+
 def run_trainer_worker(
     worker_id,
     device,
-    backend,
+    args,
     trainer_queue,
     parameter_update_queue,
     status_queue,
@@ -35,8 +54,10 @@ def run_trainer_worker(
     event_queue,
 ):
     worker_device = _resolve_device(device)
-    local_backend = backend.clone_for_device(worker_device)
-    local_backend.load_trainable_state(shared_state.get("trainable_state", {}))
+    local_backend = _build_local_backend(args, worker_device, "trainer.%d" % worker_id)
+    initial_shared_state = shared_state.get("trainable_state", {})
+    if initial_shared_state:
+        local_backend.load_trainable_state(initial_shared_state)
     local_version = int(policy_version_value.value)
 
     local_update_count = 0

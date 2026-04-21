@@ -52,18 +52,26 @@ MODE_ORDER = ["sync_train", "async_train", "async_areal_style"]
 # ---------------------------------------------------------------------------
 def _iter_runs(exp_dir):
     # type: (Path) -> List[Tuple[str, Dict[str, Any], Path]]
+    # Recursively find every summary.json under exp_dir. Sub-sweeps may be
+    # organized into sub-directories (e.g. sync/, async_gsm8k/, async_coding/).
     out = []
-    for d in sorted(exp_dir.iterdir()):
-        if not d.is_dir():
+    root = Path(exp_dir)
+    seen = set()
+    for sj in sorted(root.rglob("summary.json")):
+        run_dir = sj.parent
+        key = run_dir.resolve()
+        if key in seen:
             continue
-        sj = d / "summary.json"
-        if not sj.exists():
-            continue
+        seen.add(key)
         try:
             summary = json.loads(sj.read_text(encoding="utf-8"))
         except Exception:
             continue
-        out.append((d.name, summary, d))
+        try:
+            name = str(run_dir.relative_to(root))
+        except ValueError:
+            name = run_dir.name
+        out.append((name, summary, run_dir))
     return out
 
 

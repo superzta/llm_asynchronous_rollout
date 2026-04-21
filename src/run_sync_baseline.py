@@ -8,6 +8,7 @@ from src.coding_reward import evaluate_response
 from src.coding_task import build_model_prompt, load_tasks, repeat_tasks
 from src.metrics import summarize_sync, write_json, write_jsonl
 from src.model_backends import build_backend
+from src.progress import ProgressReporter
 
 
 class PolicyGradientTrainer:
@@ -104,10 +105,18 @@ def run(args):
     tokens_per_sec_by_step = []  # type: List[Dict[str, Any]]
 
     wall_start = time.time()
+    progress = ProgressReporter(tag="sync", total=len(tasks))
+    progress.note(
+        "starting: tasks=%d update_batch=%d max_new_tokens=%s dataset=%s"
+        % (len(tasks), args.update_batch_size,
+           getattr(args, "max_new_tokens", "?"), args.dataset)
+    )
     for step_idx, task in enumerate(tasks, start=1):
         sample_policy_version = policy_version
         prompt = build_model_prompt(task)
+        gen_t0 = time.time()
         generation = backend.generate(prompt=prompt, task=task)
+        gen_sec = time.time() - gen_t0
         reward = evaluate_response(
             response_text=generation.text,
             task=task,
@@ -147,6 +156,14 @@ def run(args):
         reward_by_step.append({"step": step_idx, "reward": row["reward"]})
         pass_rate_by_step.append({"step": step_idx, "pass_rate": 1.0 if row["pass"] else 0.0})
         tokens_per_sec_by_step.append({"step": step_idx, "tokens_per_sec": row["tokens_per_sec"]})
+        progress.log(
+            step=step_idx,
+            gen_s=gen_sec,
+            tok_s=generation.tokens_per_sec,
+            r=float(reward["reward"]),
+            upd=trainer.update_count,
+            pv=policy_version,
+        )
         results.append(row)
 
     final_update = trainer.finalize()

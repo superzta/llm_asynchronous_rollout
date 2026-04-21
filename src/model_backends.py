@@ -346,6 +346,11 @@ class TrainableHFCausalLMBackend(BaseModelBackend):
         self.grad_clip = float(grad_clip)
         self.weight_decay = float(weight_decay)
         self.decoupled_objective = bool(decoupled_objective)
+        # Optional mixed-precision wrap (weights stay in self.dtype_name; matmul
+        # runs in fp16 via autocast so V100 tensor cores are used). Enable with
+        # HF_USE_AUTOCAST=1 when weights are fp32 on V100.
+        import os as _os
+        self.use_autocast = bool(int(_os.environ.get("HF_USE_AUTOCAST", "0")))
         self.lock = threading.Lock()
         self._torch = None
         self._tokenizer = None
@@ -483,7 +488,11 @@ class TrainableHFCausalLMBackend(BaseModelBackend):
                 eos_token_id=self._tokenizer.eos_token_id,
             )
             with torch.no_grad():
-                out = self._model.generate(**gen_kwargs)
+                if self.use_autocast and self.device.startswith("cuda"):
+                    with torch.autocast(device_type="cuda", dtype=torch.float16):
+                        out = self._model.generate(**gen_kwargs)
+                else:
+                    out = self._model.generate(**gen_kwargs)
             self._model.train()
             seq = out.sequences[0]
             prompt_len = input_ids.shape[1]
@@ -524,7 +533,11 @@ class TrainableHFCausalLMBackend(BaseModelBackend):
             return None
         full = list(prompt_ids) + list(response_ids)
         t_full = torch.tensor([full], dtype=torch.long, device=self.device)
-        outputs = self._model(input_ids=t_full)
+        if self.use_autocast and self.device.startswith("cuda"):
+            with torch.autocast(device_type="cuda", dtype=torch.float16):
+                outputs = self._model(input_ids=t_full)
+        else:
+            outputs = self._model(input_ids=t_full)
         logits = outputs.logits[0]  # [seq_len, vocab]
         # For predicting token at position i, use logits at i-1. Response tokens
         # begin at index len(prompt_ids).

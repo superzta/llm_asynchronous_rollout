@@ -1,4 +1,5 @@
 import multiprocessing as mp
+import os
 import time
 
 from src.areal_controller import run_controller
@@ -6,7 +7,6 @@ from src.areal_parameter_service import run_parameter_service
 from src.areal_rollout_worker import run_rollout_worker
 from src.areal_trainer_worker import run_trainer_worker
 from src.coding_task import build_model_prompt, load_tasks, repeat_tasks
-from src.model_backends import build_backend
 
 
 def _safe_mean(values):
@@ -35,36 +35,44 @@ def run_areal_style(args):
     for task in tasks:
         task_payloads.append({"task": task.to_dict(), "prompt": build_model_prompt(task), "task_id": task.task_id})
 
-    base_backend = build_backend(args)
-    initial_state = base_backend.get_trainable_state()
-
+    # IMPORTANT: do NOT instantiate a GPU-resident backend in the main process.
+    # Forking a process that has a live CUDA context silently hangs any CUDA
+    # call in the children. Workers will build their own backend on their
+    # assigned device after spawn. Shared state starts empty; each worker
+    # bootstraps weights from the HF cache (deterministic for a fixed
+    # model_id), and subsequent updates flow through the parameter service.
     rollout_device_list = _assign_devices(_parse_device_list(args.rollout_devices), args.num_rollout_workers)
     trainer_device_list = _assign_devices(_parse_device_list(args.trainer_devices), args.num_trainer_workers)
 
-    manager = mp.Manager()
+    # Use a spawn context so children get a fresh interpreter and a clean
+    # CUDA state. This lets the main process stay CUDA-free and workers each
+    # initialize torch.cuda on their assigned GPU.
+    ctx = mp.get_context("spawn")
+
+    manager = ctx.Manager()
     shared_state = manager.dict()
-    shared_state["trainable_state"] = initial_state
-    policy_version_value = mp.Value("i", 0)
-    global_update_count_value = mp.Value("i", 0)
+    shared_state["trainable_state"] = {}
+    policy_version_value = ctx.Value("i", 0)
+    global_update_count_value = ctx.Value("i", 0)
     trainer_update_counts = manager.dict()
 
-    stop_event = mp.Event()
-    parameter_update_queue = mp.Queue(maxsize=args.queue_maxsize)
-    parameter_commit_queue = mp.Queue(maxsize=args.queue_maxsize)
-    rollout_sample_queue = mp.Queue(maxsize=args.queue_maxsize)
-    rollout_status_queue = mp.Queue()
-    trainer_status_queue = mp.Queue()
-    event_queue = mp.Queue(maxsize=max(args.queue_maxsize * 4, 256))
+    stop_event = ctx.Event()
+    parameter_update_queue = ctx.Queue(maxsize=args.queue_maxsize)
+    parameter_commit_queue = ctx.Queue(maxsize=args.queue_maxsize)
+    rollout_sample_queue = ctx.Queue(maxsize=args.queue_maxsize)
+    rollout_status_queue = ctx.Queue()
+    trainer_status_queue = ctx.Queue()
+    event_queue = ctx.Queue(maxsize=max(args.queue_maxsize * 4, 256))
 
     rollout_task_queues = []
     for _ in range(args.num_rollout_workers):
-        rollout_task_queues.append(mp.Queue(maxsize=args.queue_maxsize))
+        rollout_task_queues.append(ctx.Queue(maxsize=args.queue_maxsize))
 
     trainer_input_queues = []
     for _ in range(args.num_trainer_workers):
-        trainer_input_queues.append(mp.Queue(maxsize=args.queue_maxsize))
+        trainer_input_queues.append(ctx.Queue(maxsize=args.queue_maxsize))
 
-    parameter_service_proc = mp.Process(
+    parameter_service_proc = ctx.Process(
         target=run_parameter_service,
         args=(
             parameter_update_queue,
@@ -82,12 +90,12 @@ def run_areal_style(args):
 
     rollout_procs = []
     for worker_id in range(args.num_rollout_workers):
-        proc = mp.Process(
+        proc = ctx.Process(
             target=run_rollout_worker,
             args=(
                 worker_id,
                 rollout_device_list[worker_id],
-                base_backend,
+                args,
                 rollout_task_queues[worker_id],
                 rollout_sample_queue,
                 rollout_status_queue,
@@ -106,12 +114,12 @@ def run_areal_style(args):
 
     trainer_procs = []
     for worker_id in range(args.num_trainer_workers):
-        proc = mp.Process(
+        proc = ctx.Process(
             target=run_trainer_worker,
             args=(
                 worker_id,
                 trainer_device_list[worker_id],
-                base_backend,
+                args,
                 trainer_input_queues[worker_id],
                 parameter_update_queue,
                 trainer_status_queue,
@@ -126,16 +134,58 @@ def run_areal_style(args):
         proc.start()
         trainer_procs.append(proc)
 
-    controller_out = run_controller(
-        args=args,
-        tasks=task_payloads,
-        rollout_task_queues=rollout_task_queues,
-        rollout_sample_queue=rollout_sample_queue,
-        trainer_queues=trainer_input_queues,
-        parameter_commit_queue=parameter_commit_queue,
-        policy_version_value=policy_version_value,
-        event_queue=event_queue,
-    )
+    heartbeat_stop = [False]
+
+    def _heartbeat():
+        import threading as _th
+        import time as _time
+        from src.progress import ProgressReporter as _PR
+        reporter = _PR(tag="areal", total=len(task_payloads))
+        reporter.note(
+            "starting: tasks=%d rollout=%s trainer=%s k=%s update_batch=%s"
+            % (
+                len(task_payloads),
+                rollout_device_list,
+                trainer_device_list,
+                getattr(args, "staleness_k", "?"),
+                getattr(args, "update_batch_size", "?"),
+            )
+        )
+        interval = max(1.0, float(os.environ.get("AREAL_HEARTBEAT_SEC", "5")))
+        while not heartbeat_stop[0]:
+            try:
+                rsq = rollout_sample_queue.qsize()
+            except Exception:
+                rsq = -1
+            try:
+                tiqs = [q.qsize() for q in trainer_input_queues]
+            except Exception:
+                tiqs = []
+            reporter.log(
+                step=int(global_update_count_value.value),
+                pv=int(policy_version_value.value),
+                sq=rsq,
+                tq=",".join(str(x) for x in tiqs),
+            )
+            _time.sleep(interval)
+
+    import threading as _threading
+    heartbeat_thread = _threading.Thread(target=_heartbeat, daemon=True)
+    heartbeat_thread.start()
+
+    try:
+        controller_out = run_controller(
+            args=args,
+            tasks=task_payloads,
+            rollout_task_queues=rollout_task_queues,
+            rollout_sample_queue=rollout_sample_queue,
+            trainer_queues=trainer_input_queues,
+            parameter_commit_queue=parameter_commit_queue,
+            policy_version_value=policy_version_value,
+            event_queue=event_queue,
+        )
+    finally:
+        heartbeat_stop[0] = True
 
     for q in trainer_input_queues:
         q.put(None)

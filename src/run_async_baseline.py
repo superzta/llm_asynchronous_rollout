@@ -10,6 +10,7 @@ from src.coding_reward import evaluate_response
 from src.coding_task import CodingTask, build_model_prompt, load_tasks, repeat_tasks
 from src.metrics import summarize_async, write_json, write_jsonl
 from src.model_backends import build_backend
+from src.progress import ProgressReporter
 from src.staleness import bounded_staleness_accept
 
 
@@ -101,6 +102,13 @@ def run(args):
             policy_state.version += 1
             return policy_state.version
 
+    producer_progress = ProgressReporter(tag="async.gen", total=len(tasks))
+    learner_progress = ProgressReporter(tag="async.upd", total=None)
+    producer_progress.note(
+        "starting: tasks=%d k=%s update_batch=%d" %
+        (len(tasks), args.staleness_k, args.update_batch_size)
+    )
+
     def producer(task_items):
         # type: (List[CodingTask]) -> None
         for step_idx, task in enumerate(task_items, start=1):
@@ -108,7 +116,14 @@ def run(args):
                 break
             policy_version = get_policy_version()
             prompt = build_model_prompt(task)
+            gen_t0 = time.time()
             generation = backend.generate(prompt=prompt, task=task)
+            producer_progress.log(
+                step=step_idx,
+                gen_s=time.time() - gen_t0,
+                tok_s=generation.tokens_per_sec,
+                pv=policy_version,
+            )
             sample = {
                 "task_id": task.task_id,
                 "task": task.to_dict(),
@@ -239,7 +254,9 @@ def run(args):
                 }
                 for x in pending
             ]
+            upd_t0 = time.time()
             update_info = backend.policy_gradient_update(train_samples)
+            upd_s = time.time() - upd_t0
             if update_info.get("updated", False):
                 if args.learner_delay_sec > 0:
                     time.sleep(args.learner_delay_sec)
@@ -257,6 +274,13 @@ def run(args):
                 for x in pending:
                     x["row_ref"]["updated_by_learner"] = True
                     x["row_ref"]["update_count"] = learner_stats["update_count"]
+                learner_progress.log(
+                    step=learner_stats["update_count"],
+                    upd_s=upd_s,
+                    loss=float(update_info.get("loss", 0.0)),
+                    r=float(update_info.get("avg_reward", 0.0)),
+                    pv=new_version,
+                )
             pending = []
 
         if pending:

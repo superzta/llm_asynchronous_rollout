@@ -16,7 +16,7 @@
 #SBATCH --nodes=1
 #SBATCH --partition=GPU-shared
 #SBATCH --gpus=v100-32:2
-#SBATCH --time=12:00:00
+#SBATCH --time=15:00:00
 #SBATCH --output=logs/final_report_%j.out
 #SBATCH --error=logs/final_report_%j.err
 
@@ -70,33 +70,41 @@ touch "${RUN_LOG}" "${GPU_LOG}"
 GPU_MONITOR_PID=$!
 trap 'kill ${GPU_MONITOR_PID} 2>/dev/null || true' EXIT
 
-# Default sweep knobs (comprehensive). Override at submission time:
-#     sbatch --export=ALL,SEEDS=0,1,STALENESS_K=0,2,4 scripts/submit_final_report.sbatch
+# Default sweep knobs (comprehensive but quality-preserving). Override at
+# submission time, e.g.:
+#     sbatch --export=ALL,DATASETS=gsm8k,SEEDS=0,1 scripts/submit_final_report.sbatch
+# or skip coding:
+#     sbatch --export=ALL,DATASETS=gsm8k scripts/submit_final_report.sbatch
 : "${MODEL_ID:=Qwen/Qwen2.5-0.5B-Instruct}"
-: "${MODES:=sync_train,async_train,async_areal_style}"
+: "${DATASETS:=gsm8k,coding}"
+: "${ASYNC_MODES:=async_train,async_areal_style}"
+: "${RUN_SYNC:=1}"
 : "${SEEDS:=0,1,2}"
-: "${STALENESS_K:=0,1,2,4,8}"
+: "${STALENESS_K:=0,2,4,8}"
 : "${DECOUPLED:=0,1}"
 : "${EPOCHS:=1}"
-: "${MAX_NEW_TOKENS:=192}"
+: "${MAX_NEW_TOKENS:=128}"
 : "${TRAIN_SIZE:=128}"
 : "${EVAL_SIZE:=64}"
 : "${LR:=5e-6}"
 : "${HF_DTYPE:=float32}"
 : "${UPDATE_BATCH:=4}"
 : "${K_HEADLINE:=2}"
-: "${PASS_THRESHOLD:=0.10}"
-export MODEL_ID MODES SEEDS STALENESS_K DECOUPLED EPOCHS MAX_NEW_TOKENS \
-       TRAIN_SIZE EVAL_SIZE LR HF_DTYPE UPDATE_BATCH K_HEADLINE PASS_THRESHOLD
+: "${PASS_THRESHOLD_GSM8K:=0.10}"
+: "${PASS_THRESHOLD_CODING:=0.10}"
+export MODEL_ID DATASETS ASYNC_MODES RUN_SYNC SEEDS STALENESS_K DECOUPLED \
+       EPOCHS MAX_NEW_TOKENS TRAIN_SIZE EVAL_SIZE LR HF_DTYPE UPDATE_BATCH \
+       K_HEADLINE PASS_THRESHOLD_GSM8K PASS_THRESHOLD_CODING
 
 {
   echo "[config] MODEL_ID=${MODEL_ID}"
-  echo "[config] MODES=${MODES}"
+  echo "[config] DATASETS=${DATASETS}  ASYNC_MODES=${ASYNC_MODES}  RUN_SYNC=${RUN_SYNC}"
   echo "[config] SEEDS=${SEEDS}  STALENESS_K=${STALENESS_K}  DECOUPLED=${DECOUPLED}"
   echo "[config] EPOCHS=${EPOCHS}  MAX_NEW_TOKENS=${MAX_NEW_TOKENS}"
   echo "[config] TRAIN_SIZE=${TRAIN_SIZE}  EVAL_SIZE=${EVAL_SIZE}"
   echo "[config] LR=${LR}  HF_DTYPE=${HF_DTYPE}  UPDATE_BATCH=${UPDATE_BATCH}"
-  echo "[config] K_HEADLINE=${K_HEADLINE}  PASS_THRESHOLD=${PASS_THRESHOLD}"
+  echo "[config] K_HEADLINE=${K_HEADLINE}"
+  echo "[config] PASS_THRESHOLD_GSM8K=${PASS_THRESHOLD_GSM8K}  PASS_THRESHOLD_CODING=${PASS_THRESHOLD_CODING}"
 } | tee -a "${RUN_LOG}"
 
 stdbuf -oL -eL \

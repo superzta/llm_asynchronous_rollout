@@ -47,14 +47,29 @@ def _mean_std(values):
 
 
 def _load_runs(experiment_dir):
+    """Recursively discover summary.json files.
+
+    Runs may live at either:
+      - experiment_dir/<run>/summary.json (legacy flat layout), or
+      - experiment_dir/<dataset>/<mode>/<run>/summary.json (nested layout used
+        by run_final_report.sh). We walk recursively and skip summary.json
+        files produced by aggregators (merged_summary.json etc).
+    """
+    root = Path(experiment_dir)
     runs = []
-    for run_dir in sorted([p for p in Path(experiment_dir).iterdir() if p.is_dir()]):
-        summary_path = run_dir / "summary.json"
+    for summary_path in sorted(root.rglob("summary.json")):
+        run_dir = summary_path.parent
         config_path = run_dir / "config.json"
-        if not summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
             continue
-        summary = json.loads(summary_path.read_text(encoding="utf-8"))
-        config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
+        config = {}
+        if config_path.exists():
+            try:
+                config = json.loads(config_path.read_text(encoding="utf-8"))
+            except Exception:
+                config = {}
         row = {"run_name": run_dir.name}
         row.update(config)
         row.update(summary)

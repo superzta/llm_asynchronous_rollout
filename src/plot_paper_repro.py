@@ -27,15 +27,25 @@ import matplotlib.pyplot as plt
 
 
 def _iter_run_summaries(exp_dir):
-    for d in sorted(Path(exp_dir).iterdir()):
-        if not d.is_dir():
+    # Recursively find every summary.json under exp_dir (depth <= 3).
+    # This lets the driver run multiple sub-sweeps into sub-directories
+    # (e.g. sync/, async_gsm8k/, async_coding/) and still plot everything
+    # together.
+    root = Path(exp_dir)
+    seen = set()
+    for sj in sorted(root.rglob("summary.json")):
+        run_dir = sj.parent
+        if run_dir.resolve() in seen:
             continue
-        sj = d / "summary.json"
-        if sj.exists():
-            try:
-                yield d.name, json.loads(sj.read_text(encoding="utf-8"))
-            except Exception:
-                continue
+        seen.add(run_dir.resolve())
+        try:
+            name = str(run_dir.relative_to(root))
+        except ValueError:
+            name = run_dir.name
+        try:
+            yield name, json.loads(sj.read_text(encoding="utf-8"))
+        except Exception:
+            continue
 
 
 def _get_cfg(summary):

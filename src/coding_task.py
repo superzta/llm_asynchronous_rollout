@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from typing import Iterable, Iterator, List, Optional, Union
 
@@ -63,6 +64,16 @@ def load_tasks(path):
             if not line:
                 continue
             tasks.append(CodingTask.from_dict(json.loads(line)))
+    # Optional in-memory truncation for fast smoke tests without regenerating
+    # dataset files. TASK_LIMIT=N keeps only the first N tasks.
+    limit_env = os.environ.get("TASK_LIMIT", "").strip()
+    if limit_env:
+        try:
+            limit = int(limit_env)
+        except ValueError:
+            limit = 0
+        if limit > 0 and limit < len(tasks):
+            tasks = tasks[:limit]
     return tasks
 
 
