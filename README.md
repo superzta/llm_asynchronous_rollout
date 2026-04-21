@@ -173,10 +173,10 @@ llm_asynchronous_rollout/
 │   └── submit_paper_repro.sbatch, submit_real_comparison.sbatch
 ├── tests/
 │   └── test_coding_reward.py                      code-extraction / timeout / syntax tests
-├── exp/                                           experimental scratch (buffer.py, train.py, …)
-├── slime_examples/psc_async_project/              lightweight Slime adapter scaffold
-├── results/experiments/<EXP_NAME>/                all sweep artifacts (see Outputs section)
-└── logs/                                          Slurm stdout/stderr + tee'd interactive logs
+├── requirements.txt                               pinned Python dependencies
+├── results/experiments/final_report_fixed_20260421_154322/   curated paper snapshot (tracked)
+├── results/experiments/<other>/                   local sweeps only (gitignored)
+└── logs/                                          local only (gitignored; use tee for archives)
 ```
 
 ---
@@ -187,10 +187,10 @@ The project is developed and tested on the **PSC Bridges-2 GPU-shared partition*
 
 ```bash
 # From a clean Python 3.12 conda/mamba env:
-pip install -r exp/requirements.txt
+pip install -r requirements.txt
 ```
 
-Pinned minima (see `exp/requirements.txt`):
+Pinned minima (see `requirements.txt`):
 
 - `torch>=2.2.0`, `transformers>=4.40.0`, `accelerate>=0.30.0`, `datasets>=2.19.0`
 - `numpy>=1.24`, `pandas>=2.0`, `scipy>=1.10`, `matplotlib>=3.7`, `tqdm>=4.66`
@@ -339,6 +339,10 @@ bash scripts/run_final_report.sh        # will now re-execute only run 008
 ---
 
 ## Outputs and figures
+
+**What is version-controlled:** only `results/experiments/final_report_fixed_20260421_154322/` (full final-report sweep: runs, plots, tables, `INDEX.md`). Every other path under `results/` is gitignored so local sweeps and logs never clutter the remote. Regenerate your own tree with `scripts/run_final_report.sh`.
+
+To **replace** that snapshot with a newer run: (1) copy or rename the finished `EXP_NAME` directory under `results/experiments/` to the name you want in git; (2) update the three occurrences of the old name in `.gitignore` (the `!results/experiments/...` block and the `*.png` / `*.log` carve-outs) to the new directory name; (3) `git rm -r --cached results/experiments/<old_name>` if needed, then `git add -f results/experiments/<new_name>/`.
 
 Each run writes:
 

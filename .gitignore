@@ -1,4 +1,6 @@
 # ---- Python / caches ----------------------------------------------------
+# Note: files listed here are ignored only if not already tracked. Remove
+# stray bytecode from the index with: git rm -r --cached '**/__pycache__'
 __pycache__/
 **/__pycache__/
 *.py[cod]
@@ -28,15 +30,20 @@ uv.lock.local
 *.swo
 *.bak
 
-# ---- Experiment outputs (large, reproducible, do not commit) -----------
-results/
+# ---- Experiment outputs -------------------------------------------------
+# Ignore all of results/ except the curated paper snapshot (repro bundle).
+results/*
+!results/experiments/
+results/experiments/*
+!results/experiments/final_report_fixed_20260421_154322/
+!results/experiments/final_report_fixed_20260421_154322/**
+
 results_*/
 experiments/
 logs/
 runs/
 wandb/
 tensorboard/
-*.log
 
 # ---- Model / dataset caches --------------------------------------------
 checkpoints/
@@ -55,13 +62,29 @@ inductor_cache/
 *.pkl
 *.pickle
 
-# ---- Plot / analysis outputs that live with results --------------------
+# ---- Plot / analysis outputs (global) -----------------------------------
 *.png
 *.pdf
 !docs/**/*.png
 !docs/**/*.pdf
 
+# Curated snapshot may include paper figures (override globals above).
+!results/experiments/final_report_fixed_20260421_154322/**/*.png
+!results/experiments/final_report_fixed_20260421_154322/**/*.pdf
+
+*.log
+!results/experiments/final_report_fixed_20260421_154322/**/*.log
+
 # ---- Temp / scratch -----------------------------------------------------
 tmp/
 scratch/
 *.tmp
+
+# ---- Not part of the published codebase --------------------------------
+slime_examples/
+
+# Legacy experimental tree (duplicate of root requirements.txt)
+exp/
+
+# Internal agent / scratch notes
+src/prompt.md

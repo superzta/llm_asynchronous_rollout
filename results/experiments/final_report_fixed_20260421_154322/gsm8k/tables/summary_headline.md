@@ -1,0 +1,14 @@
+# Headline results (one row per run)
+
+| run | mode | staleness_k | decoupled | seed | update_count | wall_clock_sec | avg_tokens_per_sec | effective_tokens_per_sec | accepted_fraction | pass_rate_per_update | mean_staleness | max_staleness_observed |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| async/001__mode-async_areal_style__k-0__seed-0__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-0 | async_areal_style | 0 | 0 | 0 | 26 | 357.68 | 36.86 | 24.82 | 0.673 | 0.192 | 0.0 | 0 |
+| async/002__mode-async_areal_style__k-0__seed-0__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-1 | async_areal_style | 0 | 1 | 0 | 26 | 378.74 | 35.68 | 24.02 | 0.673 | 0.077 | 0.0 | 0 |
+| async/003__mode-async_areal_style__k-0__seed-1__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-0 | async_areal_style | 0 | 0 | 1 | 26 | 374.08 | 36.01 | 24.24 | 0.673 | 0.077 | 0.0 | 0 |
+| async/004__mode-async_areal_style__k-0__seed-1__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-1 | async_areal_style | 0 | 1 | 1 | 26 | 375.36 | 35.82 | 24.12 | 0.673 | 0.0 | 0.0 | 0 |
+| async/005__mode-async_areal_style__k-4__seed-0__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-0 | async_areal_style | 4 | 0 | 0 | 32 | 367.28 | 35.02 | 28.19 | 0.805 | 0.625 | 0.242 | 1 |
+| async/006__mode-async_areal_style__k-4__seed-0__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-1 | async_areal_style | 4 | 1 | 0 | 32 | 383.71 | 35.19 | 28.33 | 0.805 | 0.062 | 0.242 | 1 |
+| async/007__mode-async_areal_style__k-4__seed-1__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-0 | async_areal_style | 4 | 0 | 1 | 32 | 385.84 | 34.95 | 28.14 | 0.805 | 0.219 | 0.242 | 1 |
+| async/008__mode-async_areal_style__k-4__seed-1__ub-4__q-256__ep-1__b-hf_trainable__lr-5e-06__nr-1__nt-1__pdelay-0.0__ldelay-0.0__dec-1 | async_areal_style | 4 | 1 | 1 | 32 | 365.62 | 35.68 | 28.72 | 0.805 | 0.031 | 0.242 | 1 |
+| sync/001__mode-sync_train__k-na__seed-0__ub-4__q-na__ep-1__b-hf_trainable__lr-5e-06__nr-na__nt-na__pdelay-0.0__ldelay-0.0__dec-1 | sync_train | 0 | 1 | 0 | 32 | 382.54 | 35.58 | 35.58 | 1.0 | 0.031 | 0.0 | 0 |
+| sync/002__mode-sync_train__k-na__seed-1__ub-4__q-na__ep-1__b-hf_trainable__lr-5e-06__nr-na__nt-na__pdelay-0.0__ldelay-0.0__dec-1 | sync_train | 0 | 1 | 1 | 32 | 339.64 | 37.64 | 37.64 | 1.0 | 0.031 | 0.0 | 0 |
