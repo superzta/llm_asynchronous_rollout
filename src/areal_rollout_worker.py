@@ -58,6 +58,7 @@ def run_rollout_worker(
     generation_chunk_size,
     rollout_chunk_delay_sec,
     event_queue,
+    worker_ready_queue=None,
 ):
     worker_device = _resolve_device(device)
     local_backend = _build_local_backend(args, worker_device, "rollout.%d" % worker_id)
@@ -65,6 +66,13 @@ def run_rollout_worker(
     if initial_shared_state:
         local_backend.load_trainable_state(initial_shared_state)
     local_version = int(policy_version_value.value)
+    if worker_ready_queue is not None:
+        try:
+            worker_ready_queue.put(
+                {"type": "rollout", "worker_id": int(worker_id), "device": str(worker_device)}
+            )
+        except Exception:
+            pass
 
     generated_count = 0
     interrupt_count = 0

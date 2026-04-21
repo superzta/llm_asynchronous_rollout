@@ -210,6 +210,15 @@ def run(args):
         "update_batch_size": args.update_batch_size,
         "dummy_sleep_sec": args.dummy_sleep_sec,
         "reward_timeout_sec": args.reward_timeout_sec,
+        "decoupled_objective": int(getattr(args, "decoupled_objective", 1)),
+        "hf_dtype": getattr(args, "hf_dtype", None),
+        "hf_attn_impl": getattr(args, "hf_attn_impl", None),
+        "hf_chat_template": int(getattr(args, "hf_chat_template", 1)),
+        "grpo_epsilon": float(getattr(args, "grpo_epsilon", 0.2)),
+        "grpo_kl_coef": float(getattr(args, "grpo_kl_coef", 0.02)),
+        "grpo_group_size": int(getattr(args, "grpo_group_size", 0)),
+        "grad_clip": float(getattr(args, "grad_clip", 1.0)),
+        "weight_decay": float(getattr(args, "weight_decay", 0.0)),
     }
     write_jsonl(args.results_jsonl, results)
     write_json(args.summary_json, summary)

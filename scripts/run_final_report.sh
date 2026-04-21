@@ -91,6 +91,24 @@ EXP_NAME="${EXP_NAME:-final_report_${STAMP}}"
 EXP_DIR_REL="results/experiments/${EXP_NAME}"
 EXP_DIR="${REPO_ROOT}/${EXP_DIR_REL}"
 
+# Resume detection: if the experiment dir already exists with any run
+# subdirectories, reuse it and skip runs that already produced a summary.json.
+# You can also force this explicitly with RESUME=1.
+: "${RESUME:=auto}"
+RESUME_ACTIVE=0
+if [[ "${RESUME}" == "1" ]]; then
+  RESUME_ACTIVE=1
+elif [[ "${RESUME}" == "auto" && -d "${EXP_DIR}" ]]; then
+  # Any existing run dir anywhere under the experiment triggers resume.
+  if find "${EXP_DIR}" -mindepth 3 -maxdepth 4 -name "summary.json" -print -quit 2>/dev/null | grep -q summary.json; then
+    RESUME_ACTIVE=1
+  fi
+fi
+SKIP_EXISTING_FLAG=""
+if [[ "${RESUME_ACTIVE}" == "1" ]]; then
+  SKIP_EXISTING_FLAG="--skip-existing"
+fi
+
 mkdir -p "${EXP_DIR}" data logs
 ln -sfn "${EXP_NAME}" results/experiments/latest || true
 
@@ -100,6 +118,7 @@ echo "[info] ASYNC_MODES=${ASYNC_MODES}  RUN_SYNC=${RUN_SYNC}"
 echo "[info] SEEDS=${SEEDS}  STALENESS_K=${STALENESS_K}  DECOUPLED=${DECOUPLED}"
 echo "[info] MAX_NEW_TOKENS=${MAX_NEW_TOKENS}"
 echo "[info] EXP_DIR=${EXP_DIR}"
+echo "[info] RESUME=${RESUME}  RESUME_ACTIVE=${RESUME_ACTIVE}"
 nvidia-smi --list-gpus || true
 
 # -------- dataset resolution ------------------------------------------------
@@ -172,26 +191,28 @@ EOF
 run_sync_pass() {
   local dataset="$1" dataset_path="$2" ds_dir="$3"
   local sub="${ds_dir#${EXP_DIR_REL}/}"   # e.g. "gsm8k/sync"
-  echo "[sweep] sync pass: ${dataset} -> ${ds_dir}/sync"
+  echo "[sweep] sync pass: ${dataset} -> ${ds_dir}/sync (skip_existing=${RESUME_ACTIVE})"
   python3 -m src.run_experiment_grid \
     --experiment-name "${sub}/sync" \
     --modes sync_train \
     --staleness-k-values 0 \
     --seeds "${SEEDS}" \
     --decoupled-objective-values 1 \
+    ${SKIP_EXISTING_FLAG} \
     $(common_flags "${dataset_path}")
 }
 
 run_async_pass() {
   local dataset="$1" dataset_path="$2" ds_dir="$3"
   local sub="${ds_dir#${EXP_DIR_REL}/}"   # e.g. "gsm8k/async"
-  echo "[sweep] async pass: ${dataset} -> ${ds_dir}/async"
+  echo "[sweep] async pass: ${dataset} -> ${ds_dir}/async (skip_existing=${RESUME_ACTIVE})"
   python3 -m src.run_experiment_grid \
     --experiment-name "${sub}/async" \
     --modes "${ASYNC_MODES}" \
     --staleness-k-values "${STALENESS_K}" \
     --seeds "${SEEDS}" \
     --decoupled-objective-values "${DECOUPLED}" \
+    ${SKIP_EXISTING_FLAG} \
     $(common_flags "${dataset_path}")
 }
 

@@ -67,6 +67,19 @@ def _iter_runs(exp_dir):
             summary = json.loads(sj.read_text(encoding="utf-8"))
         except Exception:
             continue
+        # Merge run_dir/config.json into summary["config"] so downstream
+        # accessors see every flag (decoupled_objective, hf_*, grpo_*, ...)
+        # even when older summaries embedded a partial config.
+        cfg_path = run_dir / "config.json"
+        if cfg_path.exists():
+            try:
+                external_cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+                if isinstance(external_cfg, dict):
+                    merged = dict(external_cfg)
+                    merged.update(summary.get("config") or {})
+                    summary["config"] = merged
+            except Exception:
+                pass
         try:
             name = str(run_dir.relative_to(root))
         except ValueError:

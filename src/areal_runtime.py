@@ -63,6 +63,11 @@ def run_areal_style(args):
     rollout_status_queue = ctx.Queue()
     trainer_status_queue = ctx.Queue()
     event_queue = ctx.Queue(maxsize=max(args.queue_maxsize * 4, 256))
+    # Workers put a ready message here after their backend is on-device.
+    # The driver blocks on this queue before starting the controller timer,
+    # so cold-start / HF-cache-miss model-load time is NOT counted in
+    # wall_clock_sec. It is reported separately as setup_wall_clock_sec.
+    worker_ready_queue = ctx.Queue()
 
     rollout_task_queues = []
     for _ in range(args.num_rollout_workers):
@@ -106,6 +111,7 @@ def run_areal_style(args):
                 args.generation_chunk_size,
                 args.rollout_chunk_delay_sec,
                 event_queue,
+                worker_ready_queue,
             ),
             daemon=True,
         )
@@ -128,11 +134,77 @@ def run_areal_style(args):
                 stop_event,
                 args.learner_delay_sec,
                 event_queue,
+                worker_ready_queue,
             ),
             daemon=True,
         )
         proc.start()
         trainer_procs.append(proc)
+
+    # ------------------------------------------------------------------
+    # Worker-ready barrier
+    # ------------------------------------------------------------------
+    # Wait for every rollout and trainer worker to finish building its
+    # backend on-device before we let the controller start its clock.
+    # This excludes cold-start model-load time (HF cache miss, page cache
+    # cold, etc.) from wall_clock_sec. A slow disk or shared filesystem
+    # can otherwise add tens of seconds of "work-free" time to the
+    # measurement and deflate updates/sec for no algorithmic reason.
+    import sys as _sys
+
+    total_workers_to_wait = int(args.num_rollout_workers) + int(args.num_trainer_workers)
+    setup_timeout_sec = float(os.environ.get("AREAL_SETUP_TIMEOUT_SEC", "900"))
+    setup_poll_sec = float(os.environ.get("AREAL_SETUP_POLL_SEC", "5"))
+    setup_t0 = time.time()
+    _sys.stderr.write(
+        "[areal-setup] waiting for %d workers to build backends (timeout=%.0fs)...\n"
+        % (total_workers_to_wait, setup_timeout_sec)
+    )
+    _sys.stderr.flush()
+    ready_workers = 0
+    while ready_workers < total_workers_to_wait:
+        elapsed_setup = time.time() - setup_t0
+        if elapsed_setup > setup_timeout_sec:
+            raise RuntimeError(
+                "AReaL setup timed out: only %d/%d workers ready after %.1fs"
+                % (ready_workers, total_workers_to_wait, elapsed_setup)
+            )
+        try:
+            msg = worker_ready_queue.get(timeout=setup_poll_sec)
+        except Exception:
+            msg = None
+        if msg is None:
+            for p in list(rollout_procs) + list(trainer_procs):
+                if (not p.is_alive()) and (p.exitcode not in (None, 0)):
+                    raise RuntimeError(
+                        "Worker process died during backend build: pid=%s exitcode=%s"
+                        % (p.pid, p.exitcode)
+                    )
+            _sys.stderr.write(
+                "[areal-setup] t=%5.1fs still waiting (%d/%d ready)\n"
+                % (elapsed_setup, ready_workers, total_workers_to_wait)
+            )
+            _sys.stderr.flush()
+            continue
+        ready_workers += 1
+        _sys.stderr.write(
+            "[areal-setup] t=%5.1fs %s.%s ready on %s (%d/%d)\n"
+            % (
+                time.time() - setup_t0,
+                msg.get("type", "?"),
+                msg.get("worker_id", "?"),
+                msg.get("device", "?"),
+                ready_workers,
+                total_workers_to_wait,
+            )
+        )
+        _sys.stderr.flush()
+    setup_wall_clock_sec = time.time() - setup_t0
+    _sys.stderr.write(
+        "[areal-setup] all workers ready after %.1fs. starting controller timer now.\n"
+        % setup_wall_clock_sec
+    )
+    _sys.stderr.flush()
 
     heartbeat_stop = [False]
 
@@ -256,6 +328,8 @@ def run_areal_style(args):
         "avg_reward": _safe_mean(rewards),
         "pass_rate": _safe_mean(pass_vals),
         "wall_clock_sec": wall_clock_sec,
+        "setup_wall_clock_sec": float(setup_wall_clock_sec),
+        "total_wall_clock_sec": float(wall_clock_sec + setup_wall_clock_sec),
         "avg_tokens_per_sec": _safe_mean(tokens_per_sec_vals),
         "queue_depth_trace": controller_out["queue_depth_trace"],
         "replay_buffer_size_trace": controller_out["replay_buffer_size_trace"],
@@ -327,6 +401,15 @@ def run_areal_style(args):
             "num_trainer_workers": args.num_trainer_workers,
             "rollout_devices": args.rollout_devices,
             "trainer_devices": args.trainer_devices,
+            "decoupled_objective": int(getattr(args, "decoupled_objective", 1)),
+            "hf_dtype": getattr(args, "hf_dtype", None),
+            "hf_attn_impl": getattr(args, "hf_attn_impl", None),
+            "hf_chat_template": int(getattr(args, "hf_chat_template", 1)),
+            "grpo_epsilon": float(getattr(args, "grpo_epsilon", 0.2)),
+            "grpo_kl_coef": float(getattr(args, "grpo_kl_coef", 0.02)),
+            "grpo_group_size": int(getattr(args, "grpo_group_size", 0)),
+            "grad_clip": float(getattr(args, "grad_clip", 1.0)),
+            "weight_decay": float(getattr(args, "weight_decay", 0.0)),
         },
     }
     terminal_seen = float(int(controller_out.get("num_accepted", 0)) + int(controller_out.get("num_dropped", 0)))

@@ -618,12 +618,18 @@ class TrainableHFCausalLMBackend(BaseModelBackend):
                     old_t = torch.tensor(
                         old_logps, dtype=new_token_logprobs.dtype, device=self.device
                     )
-                    log_ratio = new_token_logprobs - old_t
+                    # Clamp log_ratio before exp to keep fp16 autocast stable.
+                    log_ratio = (new_token_logprobs - old_t).clamp(min=-20.0, max=20.0)
                     ratio = torch.exp(log_ratio)
                     unclipped = ratio * adv_t
                     clipped = torch.clamp(ratio, 1.0 - eps, 1.0 + eps) * adv_t
                     token_loss = -torch.min(unclipped, clipped)
-                    kl_token = (old_t - new_token_logprobs).clamp(min=-20.0, max=20.0)
+                    # Schulman k3 unbiased KL(old || new) estimator:
+                    #   KL ~ exp(log_r) - 1 - log_r        (always >= 0)
+                    # Previous implementation used (old - new) which is signed
+                    # and flipped the penalty into an incentive to drift away
+                    # from the rollout policy; that silently degraded dec=1.
+                    kl_token = (ratio - 1.0 - log_ratio).clamp(min=0.0, max=20.0)
                     with torch.no_grad():
                         clip_frac = (
                             (ratio < 1.0 - eps) | (ratio > 1.0 + eps)

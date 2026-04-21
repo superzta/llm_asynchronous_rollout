@@ -216,6 +216,13 @@ def parse_args():
     parser.add_argument("--top-p", type=float, default=1.0)
     parser.add_argument("--device", default="auto")
     parser.add_argument("--fail-fast", action="store_true")
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="If set, any run whose output directory already contains a valid "
+             "summary.json is skipped (but its metrics are still included in "
+             "the merged summary). Use this to resume an interrupted sweep.",
+    )
     return parser.parse_args()
 
 
@@ -382,49 +389,67 @@ def main():
         (run_dir / "config.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
         (run_dir / "command.txt").write_text(cmd_str + "\n", encoding="utf-8")
 
-        print("[%d/%d] Running %s" % (idx, len(grid_rows), run_name), flush=True)
-        # Stream subprocess output live (so users can see progress in tee/tail),
-        # while also persisting it to the per-run log file.
-        env = os.environ.copy()
-        env.setdefault("PYTHONUNBUFFERED", "1")
-        log_path = run_dir / "stdout.log"
-        tag = "[%d/%d %s]" % (idx, len(grid_rows), run_name[:56])
-        with open(log_path, "w", buffering=1, encoding="utf-8") as log_fh:
-            proc = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                universal_newlines=True,
-                bufsize=1,
-                env=env,
-            )
-            assert proc.stdout is not None
-            for line in proc.stdout:
-                sys.stdout.write(tag + " " + line)
-                sys.stdout.flush()
-                log_fh.write(line)
-            rc = proc.wait()
-            proc.returncode = rc
-        (run_dir / "stderr.log").write_text(
-            "(merged into stdout.log)\n", encoding="utf-8"
-        )
-
         summary_path = run_dir / "summary.json"
+        skip_this = False
+        if args.skip_existing and summary_path.exists():
+            # Validate the existing summary is parseable before skipping.
+            try:
+                json.loads(summary_path.read_text(encoding="utf-8"))
+                skip_this = True
+            except Exception:
+                skip_this = False
+
         run_record = dict(cfg)
         run_record["run_name"] = run_name
         run_record["run_dir"] = str(run_dir)
-        run_record["return_code"] = proc.returncode
-        if summary_path.exists():
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
-            for k, v in summary.items():
-                if isinstance(v, (dict, list)):
-                    continue
-                run_record[k] = v
+
+        if skip_this:
+            print("[%d/%d] SKIP (summary exists) %s" % (idx, len(grid_rows), run_name), flush=True)
+            run_record["return_code"] = 0
+            run_record["resumed"] = True
         else:
-            failures.append({"run_name": run_name, "reason": "missing summary", "return_code": proc.returncode})
+            print("[%d/%d] Running %s" % (idx, len(grid_rows), run_name), flush=True)
+            # Stream subprocess output live (so users can see progress in tee/tail),
+            # while also persisting it to the per-run log file.
+            env = os.environ.copy()
+            env.setdefault("PYTHONUNBUFFERED", "1")
+            log_path = run_dir / "stdout.log"
+            tag = "[%d/%d %s]" % (idx, len(grid_rows), run_name[:56])
+            with open(log_path, "w", buffering=1, encoding="utf-8") as log_fh:
+                proc = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    universal_newlines=True,
+                    bufsize=1,
+                    env=env,
+                )
+                assert proc.stdout is not None
+                for line in proc.stdout:
+                    sys.stdout.write(tag + " " + line)
+                    sys.stdout.flush()
+                    log_fh.write(line)
+                rc = proc.wait()
+                proc.returncode = rc
+            (run_dir / "stderr.log").write_text(
+                "(merged into stdout.log)\n", encoding="utf-8"
+            )
+            run_record["return_code"] = proc.returncode
+
+        if summary_path.exists():
+            try:
+                summary = json.loads(summary_path.read_text(encoding="utf-8"))
+                for k, v in summary.items():
+                    if isinstance(v, (dict, list)):
+                        continue
+                    run_record[k] = v
+            except Exception:
+                failures.append({"run_name": run_name, "reason": "unparseable summary"})
+        else:
+            failures.append({"run_name": run_name, "reason": "missing summary", "return_code": run_record.get("return_code")})
 
         merged.append(run_record)
-        if proc.returncode != 0 and args.fail_fast:
+        if not skip_this and run_record.get("return_code") != 0 and args.fail_fast:
             break
 
     merged_json = exp_dir / "merged_summary.json"
