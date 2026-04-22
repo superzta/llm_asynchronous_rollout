@@ -35,8 +35,8 @@ uv.lock.local
 results/*
 !results/experiments/
 results/experiments/*
-!results/experiments/final_report_fixed_20260421_154322/
-!results/experiments/final_report_fixed_20260421_154322/**
+!results/experiments/final_report_8h_interactive_20260421_195453/
+!results/experiments/final_report_8h_interactive_20260421_195453/**
 
 results_*/
 experiments/
@@ -69,11 +69,11 @@ inductor_cache/
 !docs/**/*.pdf
 
 # Curated snapshot may include paper figures (override globals above).
-!results/experiments/final_report_fixed_20260421_154322/**/*.png
-!results/experiments/final_report_fixed_20260421_154322/**/*.pdf
+!results/experiments/final_report_8h_interactive_20260421_195453/**/*.png
+!results/experiments/final_report_8h_interactive_20260421_195453/**/*.pdf
 
 *.log
-!results/experiments/final_report_fixed_20260421_154322/**/*.log
+!results/experiments/final_report_8h_interactive_20260421_195453/**/*.log
 
 # ---- Temp / scratch -----------------------------------------------------
 tmp/

@@ -174,7 +174,7 @@ llm_asynchronous_rollout/
 ├── tests/
 │   └── test_coding_reward.py                      code-extraction / timeout / syntax tests
 ├── requirements.txt                               pinned Python dependencies
-├── results/experiments/final_report_fixed_20260421_154322/   curated paper snapshot (tracked)
+├── results/experiments/final_report_8h_interactive_20260421_195453/   curated paper snapshot (tracked)
 ├── results/experiments/<other>/                   local sweeps only (gitignored)
 └── logs/                                          local only (gitignored; use tee for archives)
 ```
@@ -340,9 +340,7 @@ bash scripts/run_final_report.sh        # will now re-execute only run 008
 
 ## Outputs and figures
 
-**What is version-controlled:** only `results/experiments/final_report_fixed_20260421_154322/` (full final-report sweep: runs, plots, tables, `INDEX.md`). Every other path under `results/` is gitignored so local sweeps and logs never clutter the remote. Regenerate your own tree with `scripts/run_final_report.sh`.
-
-To **replace** that snapshot with a newer run: (1) copy or rename the finished `EXP_NAME` directory under `results/experiments/` to the name you want in git; (2) update the three occurrences of the old name in `.gitignore` (the `!results/experiments/...` block and the `*.png` / `*.log` carve-outs) to the new directory name; (3) `git rm -r --cached results/experiments/<old_name>` if needed, then `git add -f results/experiments/<new_name>/`.
+**Git bundle:** the repository tracks one curated directory, `results/experiments/final_report_8h_interactive_20260421_195453/` (GSM8K + coding, `async_train` and `async_areal_style`, 2 seeds, `K∈{0,2,4,8}`). To publish a different run, update the `!results/experiments/...` lines in `.gitignore`, then `git rm -r --cached` the old path and `git add -f` the new one.
 
 Each run writes:
 

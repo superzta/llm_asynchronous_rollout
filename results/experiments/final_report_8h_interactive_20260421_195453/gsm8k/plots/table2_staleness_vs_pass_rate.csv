@@ -1,0 +1,5 @@
+max_staleness,pass_rate_naive,n_naive,pass_rate_decoupled,n_decoupled
+0,0.2125,4,0.0625,4
+2,0.2083,4,0.0417,4
+4,0.3229,4,0.0625,4
+8,0.3021,4,0.0417,4

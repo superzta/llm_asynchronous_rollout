@@ -1,0 +1,198 @@
+{
+  "mode": "sync_train",
+  "num_samples": 12,
+  "wall_clock_sec": 33.59432053565979,
+  "avg_reward": 0.3333333333333333,
+  "pass_rate": 0.3333333333333333,
+  "avg_latency_sec": 2.620690862337748,
+  "update_count": 3,
+  "final_policy_version": 3,
+  "seed": 1,
+  "backend": "hf_trainable",
+  "lr": 5e-06,
+  "update_batch_size": 4,
+  "reward_by_step": [
+    {
+      "step": 1,
+      "reward": 1.0
+    },
+    {
+      "step": 2,
+      "reward": 1.0
+    },
+    {
+      "step": 3,
+      "reward": 1.0
+    },
+    {
+      "step": 4,
+      "reward": 1.0
+    },
+    {
+      "step": 5,
+      "reward": 0.0
+    },
+    {
+      "step": 6,
+      "reward": 0.0
+    },
+    {
+      "step": 7,
+      "reward": 0.0
+    },
+    {
+      "step": 8,
+      "reward": 0.0
+    },
+    {
+      "step": 9,
+      "reward": 0.0
+    },
+    {
+      "step": 10,
+      "reward": 0.0
+    },
+    {
+      "step": 11,
+      "reward": 0.0
+    },
+    {
+      "step": 12,
+      "reward": 0.0
+    }
+  ],
+  "pass_rate_by_step": [
+    {
+      "step": 1,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 2,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 3,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 4,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 5,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 6,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 7,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 8,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 9,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 10,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 11,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 12,
+      "pass_rate": 0.0
+    }
+  ],
+  "tokens_per_sec_by_step": [
+    {
+      "step": 1,
+      "tokens_per_sec": 28.79753721318284
+    },
+    {
+      "step": 2,
+      "tokens_per_sec": 32.80797108112352
+    },
+    {
+      "step": 3,
+      "tokens_per_sec": 32.41527883532205
+    },
+    {
+      "step": 4,
+      "tokens_per_sec": 32.24860596782016
+    },
+    {
+      "step": 5,
+      "tokens_per_sec": 30.770760298093062
+    },
+    {
+      "step": 6,
+      "tokens_per_sec": 32.59630965577387
+    },
+    {
+      "step": 7,
+      "tokens_per_sec": 32.727617827026904
+    },
+    {
+      "step": 8,
+      "tokens_per_sec": 32.66162909061058
+    },
+    {
+      "step": 9,
+      "tokens_per_sec": 32.68975793695607
+    },
+    {
+      "step": 10,
+      "tokens_per_sec": 32.578470611280224
+    },
+    {
+      "step": 11,
+      "tokens_per_sec": 32.64999714978685
+    },
+    {
+      "step": 12,
+      "tokens_per_sec": 31.318887220307204
+    }
+  ],
+  "avg_tokens_per_sec": 32.02190190727361,
+  "staleness_k": null,
+  "queue_maxsize": null,
+  "accepted_fraction": 1.0,
+  "dropped_fraction": 0.0,
+  "dropped_stale_count": 0,
+  "effective_updates_per_second": 0.08930080895119018,
+  "reward_per_second": 0.11906774526825357,
+  "reward_per_update": 1.3333333333333333,
+  "pass_rate_per_update": 1.3333333333333333,
+  "config": {
+    "dataset": "data/tiny_coding_train.jsonl",
+    "epochs": 1,
+    "seed": 1,
+    "backend": "hf_trainable",
+    "hf_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "max_new_tokens": 96,
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "device": "auto",
+    "lr": 5e-06,
+    "update_batch_size": 4,
+    "dummy_sleep_sec": 0.01,
+    "reward_timeout_sec": 2.0,
+    "decoupled_objective": 1,
+    "hf_dtype": "float32",
+    "hf_attn_impl": "eager",
+    "hf_chat_template": 1,
+    "grpo_epsilon": 0.2,
+    "grpo_kl_coef": 0.02,
+    "grpo_group_size": 0,
+    "grad_clip": 1.0,
+    "weight_decay": 0.0
+  }
+}

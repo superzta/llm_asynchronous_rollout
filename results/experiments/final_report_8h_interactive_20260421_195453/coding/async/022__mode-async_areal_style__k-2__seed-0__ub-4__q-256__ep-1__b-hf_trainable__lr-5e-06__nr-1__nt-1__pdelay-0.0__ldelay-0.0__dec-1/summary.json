@@ -1,0 +1,5828 @@
+{
+  "mode": "async_areal_style",
+  "num_rollout_workers": 1,
+  "num_trainer_workers": 1,
+  "rollout_devices": [
+    "cuda:0"
+  ],
+  "trainer_devices": [
+    "cuda:1"
+  ],
+  "update_count": 3,
+  "final_policy_version": 3,
+  "num_total_seen": 13,
+  "num_accepted": 12,
+  "num_dropped": 0,
+  "dropped_stale_count": 0,
+  "dropped_interrupted_count": 0,
+  "accepted_fraction": 0.9230769230769231,
+  "dropped_fraction": 0.0,
+  "mean_staleness": 0.16666666666666666,
+  "max_staleness": 2,
+  "avg_reward": 0.5833333333333334,
+  "pass_rate": 0.5833333333333334,
+  "wall_clock_sec": 28.723547220230103,
+  "setup_wall_clock_sec": 11.344930171966553,
+  "total_wall_clock_sec": 40.068477392196655,
+  "avg_tokens_per_sec": 31.177485695396353,
+  "queue_depth_trace": [
+    {
+      "t_sec": 0.10092973709106445,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.20141077041625977,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.3018808364868164,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.4023706912994385,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.5028254985809326,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.603278398513794,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.7037003040313721,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.8040986061096191,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 0.90450119972229,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.0527119636535645,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.1531312465667725,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.253551721572876,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.3539540767669678,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.4543704986572266,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.5547800064086914,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.655174970626831,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.7555820941925049,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.8559696674346924,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 1.9563865661621094,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.0567893981933594,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.1571946144104004,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.257599115371704,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.3579952716827393,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.4583938121795654,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.55881667137146,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.659217596054077,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.7596163749694824,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.8600103855133057,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 2.960409164428711,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.060816764831543,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.1612179279327393,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.261629581451416,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.362076997756958,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.462474822998047,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.562875747680664,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.663301706314087,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.7637085914611816,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.864116907119751,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 3.9900898933410645,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.090522766113281,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.190924644470215,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.291337490081787,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.391751766204834,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.492164373397827,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.637792110443115,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.738192796707153,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.838602781295776,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 4.939028978347778,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.039463520050049,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.139875650405884,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.240283250808716,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.340697526931763,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.4411139488220215,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.541517496109009,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.64192533493042,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.742365598678589,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.842771053314209,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 5.943183422088623,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.043594598770142,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.143988370895386,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.2443928718566895,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.344799280166626,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.44519305229187,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.545625925064087,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.64601731300354,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.7463767528533936,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.846785068511963,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 6.947192668914795,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.047599792480469,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.147998571395874,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.248412609100342,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.34881329536438,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.449260473251343,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.554987192153931,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.655428171157837,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.755881071090698,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.856338262557983,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 7.980548858642578,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.080971717834473,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.18139100074768,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.281806945800781,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.382250547409058,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.482617616653442,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.583059072494507,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.683343648910522,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.783565521240234,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.883764743804932,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 8.984002590179443,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.084245681762695,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.184470891952515,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.28465986251831,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.384917974472046,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.48513650894165,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.585341691970825,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.685553789138794,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.785765886306763,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.885986566543579,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 9.98617172241211,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.086407661437988,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.186608076095581,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.286834001541138,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.387022972106934,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.487218379974365,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.58742880821228,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.687622547149658,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.787831544876099,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.888009071350098,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 10.988238096237183,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.142916917800903,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.24312710762024,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.343348741531372,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.443574666976929,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.543855667114258,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.644064664840698,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.74428129196167,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.84443473815918,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 11.944642066955566,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.044851541519165,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.145049333572388,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.245252132415771,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.345441818237305,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.445637941360474,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.5458505153656,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.646044969558716,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.746259927749634,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.846423387527466,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 12.946759223937988,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.047181606292725,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.147541284561157,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.247864484786987,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.348163843154907,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.44845724105835,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.548753261566162,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.649252653121948,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.749675512313843,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.850090503692627,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 13.950525283813477,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.050948858261108,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.151395797729492,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.251636743545532,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.351933717727661,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.45375108718872,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.554093599319458,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.65452265739441,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.754927635192871,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.855342149734497,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 14.95574426651001,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.056146621704102,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.156677007675171,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.25711464881897,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.357545614242554,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.474566459655762,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 1
+    },
+    {
+      "t_sec": 15.574921131134033,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.67529296875,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.775725364685059,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.876164674758911,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 15.976594686508179,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.07683825492859,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.177274703979492,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.277591705322266,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.37791109085083,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.47821879386902,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.578535079956055,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.678920030593872,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.779351472854614,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.879778146743774,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 16.980148553848267,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.080517768859863,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.180827140808105,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.281126499176025,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.381436586380005,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.481831312179565,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.582255125045776,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.68251085281372,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.7828688621521,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.88338351249695,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 17.983775854110718,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.084171295166016,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.18458867073059,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.28499746322632,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.385401964187622,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.48580265045166,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.603277683258057,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.703733921051025,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.80417490005493,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 18.904576539993286,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.005011796951294,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.10545301437378,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.20589303970337,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.306339740753174,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.433774948120117,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.534199953079224,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.634597063064575,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.73501968383789,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.835447549819946,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 19.935843467712402,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.036240577697754,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.173352003097534,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.273759841918945,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.37415623664856,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.47457194328308,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.575026512145996,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.67542552947998,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.77582287788391,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.87622380256653,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 20.976614713668823,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.077017068862915,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.177427291870117,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.27785849571228,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.378252744674683,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.47864317893982,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.57904577255249,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.679444551467896,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.779839992523193,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.880264282226562,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 21.980669021606445,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.081061840057373,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.181547164916992,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.281952142715454,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.38236713409424,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.482829093933105,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.58325505256653,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.68370246887207,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.78409242630005,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.884493112564087,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 22.984896183013916,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.12996506690979,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.23037028312683,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.330708980560303,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.431106090545654,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.53153657913208,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.63193106651306,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.732352256774902,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.832757234573364,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 23.933199167251587,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.033599615097046,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.13399887084961,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.2344388961792,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.334831953048706,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.435231924057007,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.5356285572052,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.636032104492188,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.736459016799927,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.836902141571045,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 24.937304258346558,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.037713289260864,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.138121843338013,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.238548278808594,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.338951587677002,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.439393281936646,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.539808750152588,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.640203714370728,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.740618228912354,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.8410222530365,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 25.94146203994751,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.04146647453308,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.14147138595581,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.24147367477417,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.341477632522583,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.441478967666626,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.54147982597351,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.64148259162903,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.74148392677307,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.841484308242798,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 26.941487312316895,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.041488647460938,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.14149308204651,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.241496562957764,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.341499090194702,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.441500425338745,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.54150366783142,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.64150595664978,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.741509914398193,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.841511487960815,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 27.94151520729065,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.041515827178955,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.141518592834473,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.24152135848999,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.341525077819824,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.441527128219604,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.54153037071228,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    },
+    {
+      "t_sec": 28.641531705856323,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0
+    }
+  ],
+  "replay_buffer_size_trace": [
+    {
+      "t_sec": 0.10092973709106445,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.20141077041625977,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.3018808364868164,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.4023706912994385,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.5028254985809326,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.603278398513794,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.7037003040313721,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.8040986061096191,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 0.90450119972229,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 1.0527119636535645,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.1531312465667725,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.253551721572876,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.3539540767669678,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.4543704986572266,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.5547800064086914,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.655174970626831,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.7555820941925049,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.8559696674346924,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 1.9563865661621094,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.0567893981933594,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.1571946144104004,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.257599115371704,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.3579952716827393,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.4583938121795654,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.55881667137146,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.659217596054077,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.7596163749694824,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.8600103855133057,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 2.960409164428711,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.060816764831543,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.1612179279327393,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.261629581451416,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.362076997756958,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.462474822998047,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.562875747680664,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.663301706314087,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.7637085914611816,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.864116907119751,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 3.9900898933410645,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.090522766113281,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.190924644470215,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.291337490081787,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.391751766204834,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.492164373397827,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 4.637792110443115,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 4.738192796707153,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 4.838602781295776,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 4.939028978347778,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.039463520050049,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.139875650405884,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.240283250808716,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.340697526931763,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.4411139488220215,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.541517496109009,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.64192533493042,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.742365598678589,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.842771053314209,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 5.943183422088623,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.043594598770142,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.143988370895386,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.2443928718566895,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.344799280166626,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.44519305229187,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.545625925064087,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.64601731300354,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.7463767528533936,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.846785068511963,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 6.947192668914795,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.047599792480469,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.147998571395874,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.248412609100342,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.34881329536438,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.449260473251343,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 7.554987192153931,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 7.655428171157837,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 7.755881071090698,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 7.856338262557983,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 7.980548858642578,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.080971717834473,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.18139100074768,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.281806945800781,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.382250547409058,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.482617616653442,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.583059072494507,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.683343648910522,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.783565521240234,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.883764743804932,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 8.984002590179443,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.084245681762695,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.184470891952515,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.28465986251831,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.384917974472046,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.48513650894165,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.585341691970825,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.685553789138794,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.785765886306763,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.885986566543579,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 9.98617172241211,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.086407661437988,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.186608076095581,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.286834001541138,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.387022972106934,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.487218379974365,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.58742880821228,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.687622547149658,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.787831544876099,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.888009071350098,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 10.988238096237183,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 11.142916917800903,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.24312710762024,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.343348741531372,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.443574666976929,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.543855667114258,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.644064664840698,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.74428129196167,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.84443473815918,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 11.944642066955566,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.044851541519165,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.145049333572388,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.245252132415771,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.345441818237305,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.445637941360474,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.5458505153656,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.646044969558716,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.746259927749634,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.846423387527466,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 12.946759223937988,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.047181606292725,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.147541284561157,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.247864484786987,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.348163843154907,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.44845724105835,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.548753261566162,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.649252653121948,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.749675512313843,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.850090503692627,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 13.950525283813477,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 14.050948858261108,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 14.151395797729492,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 14.251636743545532,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 14.351933717727661,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 14.45375108718872,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 14.554093599319458,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 14.65452265739441,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 14.754927635192871,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 14.855342149734497,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 14.95574426651001,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 15.056146621704102,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 15.156677007675171,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 15.25711464881897,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 15.357545614242554,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 15.474566459655762,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 15.574921131134033,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 15.67529296875,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 15.775725364685059,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 15.876164674758911,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 15.976594686508179,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.07683825492859,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.177274703979492,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.277591705322266,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.37791109085083,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.47821879386902,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.578535079956055,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.678920030593872,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.779351472854614,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.879778146743774,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 16.980148553848267,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.080517768859863,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.180827140808105,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.281126499176025,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.381436586380005,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.481831312179565,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.582255125045776,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.68251085281372,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.7828688621521,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.88338351249695,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 17.983775854110718,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.084171295166016,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.18458867073059,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.28499746322632,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.385401964187622,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.48580265045166,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 18.603277683258057,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 18.703733921051025,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 18.80417490005493,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 18.904576539993286,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.005011796951294,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.10545301437378,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.20589303970337,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.306339740753174,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.433774948120117,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.534199953079224,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.634597063064575,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.73501968383789,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.835447549819946,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 19.935843467712402,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 20.036240577697754,
+      "replay_buffer_size": 1
+    },
+    {
+      "t_sec": 20.173352003097534,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.273759841918945,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.37415623664856,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.47457194328308,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.575026512145996,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.67542552947998,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.77582287788391,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.87622380256653,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 20.976614713668823,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.077017068862915,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.177427291870117,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.27785849571228,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.378252744674683,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.47864317893982,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.57904577255249,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.679444551467896,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.779839992523193,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.880264282226562,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 21.980669021606445,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.081061840057373,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.181547164916992,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.281952142715454,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.38236713409424,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.482829093933105,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.58325505256653,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.68370246887207,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.78409242630005,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.884493112564087,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 22.984896183013916,
+      "replay_buffer_size": 2
+    },
+    {
+      "t_sec": 23.12996506690979,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.23037028312683,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.330708980560303,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.431106090545654,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.53153657913208,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.63193106651306,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.732352256774902,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.832757234573364,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 23.933199167251587,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.033599615097046,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.13399887084961,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.2344388961792,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.334831953048706,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.435231924057007,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.5356285572052,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.636032104492188,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.736459016799927,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.836902141571045,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 24.937304258346558,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.037713289260864,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.138121843338013,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.238548278808594,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.338951587677002,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.439393281936646,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.539808750152588,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.640203714370728,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.740618228912354,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.8410222530365,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 25.94146203994751,
+      "replay_buffer_size": 3
+    },
+    {
+      "t_sec": 26.04146647453308,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.14147138595581,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.24147367477417,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.341477632522583,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.441478967666626,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.54147982597351,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.64148259162903,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.74148392677307,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.841484308242798,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 26.941487312316895,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.041488647460938,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.14149308204651,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.241496562957764,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.341499090194702,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.441500425338745,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.54150366783142,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.64150595664978,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.741509914398193,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.841511487960815,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 27.94151520729065,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.041515827178955,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.141518592834473,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.24152135848999,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.341525077819824,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.441527128219604,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.54153037071228,
+      "replay_buffer_size": 0
+    },
+    {
+      "t_sec": 28.641531705856323,
+      "replay_buffer_size": 0
+    }
+  ],
+  "per_rollout_worker_generated_count": {
+    "0": 12
+  },
+  "per_rollout_worker_interrupt_count": {
+    "0": 1
+  },
+  "per_rollout_worker_last_loaded_policy_version": {
+    "0": 2
+  },
+  "per_trainer_worker_update_count": {
+    "0": 3
+  },
+  "interrupted_samples_count": 1,
+  "interrupt_count_total": 1,
+  "per_rollout_worker_loaded_versions": {
+    "0": [
+      0,
+      2
+    ]
+  },
+  "reward_by_step": [
+    {
+      "step": 1,
+      "reward": 1.0
+    },
+    {
+      "step": 2,
+      "reward": 0.0
+    },
+    {
+      "step": 3,
+      "reward": 1.0
+    },
+    {
+      "step": 4,
+      "reward": 1.0
+    },
+    {
+      "step": 5,
+      "reward": 1.0
+    },
+    {
+      "step": 6,
+      "reward": 1.0
+    },
+    {
+      "step": 7,
+      "reward": 0.0
+    },
+    {
+      "step": 8,
+      "reward": 1.0
+    },
+    {
+      "step": 9,
+      "reward": 0.0
+    },
+    {
+      "step": 11,
+      "reward": 0.0
+    },
+    {
+      "step": 12,
+      "reward": 0.0
+    },
+    {
+      "step": 10,
+      "reward": 1.0
+    }
+  ],
+  "pass_rate_by_step": [
+    {
+      "step": 1,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 2,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 3,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 4,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 5,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 6,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 7,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 8,
+      "pass_rate": 1.0
+    },
+    {
+      "step": 9,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 11,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 12,
+      "pass_rate": 0.0
+    },
+    {
+      "step": 10,
+      "pass_rate": 1.0
+    }
+  ],
+  "tokens_per_sec_by_step": [
+    {
+      "step": 1,
+      "tokens_per_sec": 22.917855323579357
+    },
+    {
+      "step": 2,
+      "tokens_per_sec": 32.694554323117245
+    },
+    {
+      "step": 3,
+      "tokens_per_sec": 32.43690941826306
+    },
+    {
+      "step": 4,
+      "tokens_per_sec": 32.913773624835976
+    },
+    {
+      "step": 5,
+      "tokens_per_sec": 31.657051825545103
+    },
+    {
+      "step": 6,
+      "tokens_per_sec": 30.872828414830618
+    },
+    {
+      "step": 7,
+      "tokens_per_sec": 28.529953025323756
+    },
+    {
+      "step": 8,
+      "tokens_per_sec": 32.36573468157013
+    },
+    {
+      "step": 9,
+      "tokens_per_sec": 31.180528450216478
+    },
+    {
+      "step": 11,
+      "tokens_per_sec": 32.62382972842071
+    },
+    {
+      "step": 12,
+      "tokens_per_sec": 33.030597009476956
+    },
+    {
+      "step": 10,
+      "tokens_per_sec": 32.906212519576854
+    }
+  ],
+  "update_history": [
+    {
+      "update_id": 1,
+      "trainer_worker_id": 0,
+      "policy_version": 1,
+      "batch_id": 0,
+      "loss": 0.46795427799224854,
+      "avg_reward": 0.75,
+      "sample_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "timestamp": 1776827073.7731676
+    },
+    {
+      "update_id": 2,
+      "trainer_worker_id": 0,
+      "policy_version": 2,
+      "batch_id": 1,
+      "loss": 0.38476401567459106,
+      "avg_reward": 0.75,
+      "sample_ids": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "timestamp": 1776827074.2355716
+    },
+    {
+      "update_id": 3,
+      "trainer_worker_id": 0,
+      "policy_version": 3,
+      "batch_id": 2,
+      "loss": -0.06270162761211395,
+      "avg_reward": 0.25,
+      "sample_ids": [
+        8,
+        10,
+        11,
+        12
+      ],
+      "timestamp": 1776827085.084009
+    }
+  ],
+  "version_change_events": [
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 0,
+      "old_version": 0,
+      "new_version": 1,
+      "timestamp": 1776827073.7623863
+    },
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 1,
+      "old_version": 1,
+      "new_version": 2,
+      "timestamp": 1776827074.2355537
+    },
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 2,
+      "old_version": 2,
+      "new_version": 3,
+      "timestamp": 1776827085.083994
+    }
+  ],
+  "trainer_commit_timestamps": [
+    1776827073.7623863,
+    1776827073.7731676,
+    1776827074.2355537,
+    1776827074.2355716,
+    1776827085.083994,
+    1776827085.084009
+  ],
+  "rollout_emit_timestamps": [
+    1776827057.3215644,
+    1776827060.2584717,
+    1776827060.9061491,
+    1776827063.823216,
+    1776827064.297338,
+    1776827067.4072776,
+    1776827070.7726233,
+    1776827071.7925253,
+    1776827074.8718112,
+    1776827076.4912183,
+    1776827079.3979528,
+    1776827082.315849
+  ],
+  "staleness_histogram": {
+    "0": 11,
+    "2": 1
+  },
+  "event_trace": [
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 0,
+      "step": 1,
+      "retry_count": 0,
+      "timestamp": 1776827056.3608847
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 1,
+      "step": 2,
+      "retry_count": 0,
+      "timestamp": 1776827056.4114192
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 2,
+      "step": 3,
+      "retry_count": 0,
+      "timestamp": 1776827056.4616592
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.10092973709106445,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.4616783
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 3,
+      "step": 4,
+      "retry_count": 0,
+      "timestamp": 1776827056.5119066
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 4,
+      "step": 5,
+      "retry_count": 0,
+      "timestamp": 1776827056.5621407
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.20141077041625977,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.5621598
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 5,
+      "step": 6,
+      "retry_count": 0,
+      "timestamp": 1776827056.6123793
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 6,
+      "step": 7,
+      "retry_count": 0,
+      "timestamp": 1776827056.6626124
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.3018808364868164,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.6626287
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 7,
+      "step": 8,
+      "retry_count": 0,
+      "timestamp": 1776827056.7128768
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 8,
+      "step": 9,
+      "retry_count": 0,
+      "timestamp": 1776827056.7630994
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.4023706912994385,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.7631147
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 9,
+      "step": 10,
+      "retry_count": 0,
+      "timestamp": 1776827056.8133407
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 10,
+      "step": 11,
+      "retry_count": 0,
+      "timestamp": 1776827056.863553
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.5028254985809326,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.8635666
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 11,
+      "step": 12,
+      "retry_count": 0,
+      "timestamp": 1776827056.913794
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.603278398513794,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827056.9639966
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.7037003040313721,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827057.0644186
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.8040986061096191,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827057.1648166
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 0.90450119972229,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827057.2652197
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 0,
+      "policy_version": 0,
+      "timestamp": 1776827057.3215644
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 0,
+      "source_id": 0,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827057.3631833
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.0527119636535645,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.4134326
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.1531312465667725,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.513851
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.253551721572876,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.6142707
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.3539540767669678,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.7146723
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.4543704986572266,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.815088
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.5547800064086914,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827057.9154985
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.655174970626831,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.0158927
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.7555820941925049,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.1163006
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.8559696674346924,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.2166865
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 1.9563865661621094,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.3171046
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.0567893981933594,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.4175084
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.1571946144104004,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.5179124
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.257599115371704,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.618317
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.3579952716827393,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.7187135
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.4583938121795654,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.8191123
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.55881667137146,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827058.9195344
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.659217596054077,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.0199358
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.7596163749694824,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.1203346
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.8600103855133057,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.2207286
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 2.960409164428711,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.321127
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.060816764831543,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.4215348
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.1612179279327393,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.5219374
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.261629581451416,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.6223495
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.362076997756958,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.722796
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.462474822998047,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.8231928
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.562875747680664,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827059.9235942
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.663301706314087,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827060.024028
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.7637085914611816,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827060.1244276
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.864116907119751,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827060.2248356
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 1,
+      "policy_version": 0,
+      "timestamp": 1776827060.2584717
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 1,
+      "source_id": 1,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827060.3005612
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 3.9900898933410645,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.3508081
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.090522766113281,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.4512417
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.190924644470215,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.551643
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.291337490081787,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.652057
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.391751766204834,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.7524695
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.492164373397827,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827060.8528826
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 2,
+      "policy_version": 0,
+      "timestamp": 1776827060.9061491
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 2,
+      "source_id": 2,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827060.9482512
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.637792110443115,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827060.9985116
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.738192796707153,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.0989115
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.838602781295776,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.1993215
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 4.939028978347778,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.2997468
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.039463520050049,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.4001815
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.139875650405884,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.5005934
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.240283250808716,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.6010025
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.340697526931763,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.7014303
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.4411139488220215,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.8018324
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.541517496109009,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827061.9022357
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.64192533493042,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.0026438
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.742365598678589,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.103083
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.842771053314209,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.2034898
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 5.943183422088623,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.3039017
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.043594598770142,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.4043136
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.143988370895386,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.5047066
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.2443928718566895,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.6051118
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.344799280166626,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.7055173
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.44519305229187,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.8059113
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.545625925064087,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827062.9063442
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.64601731300354,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.0067358
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.7463767528533936,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.1070974
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.846785068511963,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.2075038
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 6.947192668914795,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.3079212
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.047599792480469,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.408318
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.147998571395874,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.5087175
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.248412609100342,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.6091301
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.34881329536438,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.7095315
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.449260473251343,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827063.80998
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 3,
+      "policy_version": 0,
+      "timestamp": 1776827063.823216
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 3,
+      "source_id": 3,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827063.8652287
+    },
+    {
+      "type": "controller_dispatch_trainer_batch",
+      "batch_id": 0,
+      "trainer_worker_id": 0,
+      "batch_size": 4,
+      "timestamp": 1776827063.8655186
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.554987192153931,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827063.9157057
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.655428171157837,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827064.0161479
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.755881071090698,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827064.1165998
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.856338262557983,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827064.2170594
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 4,
+      "policy_version": 0,
+      "timestamp": 1776827064.297338
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 4,
+      "source_id": 4,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827064.3412056
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 7.980548858642578,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.3412657
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.080971717834473,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.4416902
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.18139100074768,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.5421095
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.281806945800781,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.6425261
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.382250547409058,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.742969
+    },
+    {
+      "type": "trainer_update_computed",
+      "worker_id": 0,
+      "batch_id": 0,
+      "updated": true,
+      "timestamp": 1776827064.7567658
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.482617616653442,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.8433363
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.583059072494507,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827064.9437788
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.683343648910522,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.0440612
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.783565521240234,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.1442823
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.883764743804932,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.2444782
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 8.984002590179443,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.344717
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.084245681762695,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.4449625
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.184470891952515,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.5451875
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.28465986251831,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.6453745
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.384917974472046,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.745635
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.48513650894165,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.8458567
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.585341691970825,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827065.946059
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.685553789138794,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.0462792
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.785765886306763,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.1464808
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.885986566543579,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.2467031
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 9.98617172241211,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.3468862
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.086407661437988,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.4471252
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.186608076095581,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.5473254
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.286834001541138,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.6475482
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.387022972106934,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.7477372
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.487218379974365,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.8479326
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.58742880821228,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827066.948145
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.687622547149658,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827067.048336
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.787831544876099,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827067.1485462
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.888009071350098,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827067.2487223
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 10.988238096237183,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827067.3489556
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 5,
+      "policy_version": 0,
+      "timestamp": 1776827067.4072776
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 5,
+      "source_id": 5,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827067.5035765
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.142916917800903,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827067.503635
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.24312710762024,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827067.6038437
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.343348741531372,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827067.7040644
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.443574666976929,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827067.8042927
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.543855667114258,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827067.9045742
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.644064664840698,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.004781
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.74428129196167,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.1049964
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.84443473815918,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.205149
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 11.944642066955566,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.3053567
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.044851541519165,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.4055667
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.145049333572388,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.5057666
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.245252132415771,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.6059666
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.345441818237305,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.7061584
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.445637941360474,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.8063521
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.5458505153656,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827068.9065654
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.646044969558716,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.0067618
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.746259927749634,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.1069744
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.846423387527466,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.207148
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 12.946759223937988,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.3074782
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.047181606292725,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.4079
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.147541284561157,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.5082626
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.247864484786987,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.6085835
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.348163843154907,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.7088826
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.44845724105835,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.809176
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.548753261566162,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827069.9094725
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.649252653121948,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.0099723
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.749675512313843,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.110395
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.850090503692627,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.2108085
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 13.950525283813477,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.3112447
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.050948858261108,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.4116685
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.151395797729492,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.5121145
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.251636743545532,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.6123533
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.351933717727661,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827070.7126517
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 6,
+      "policy_version": 0,
+      "timestamp": 1776827070.7726233
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 6,
+      "source_id": 6,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827070.8144114
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.45375108718872,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827070.8144686
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.554093599319458,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827070.914813
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.65452265739441,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.015242
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.754927635192871,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.1156464
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.855342149734497,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.2160614
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 14.95574426651001,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.3164625
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.056146621704102,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.4168649
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.156677007675171,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.5173986
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.25711464881897,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.6178336
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.357545614242554,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827071.7182643
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 7,
+      "policy_version": 0,
+      "timestamp": 1776827071.7925253
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 7,
+      "source_id": 7,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 0,
+      "timestamp": 1776827071.8351204
+    },
+    {
+      "type": "controller_dispatch_trainer_batch",
+      "batch_id": 1,
+      "trainer_worker_id": 0,
+      "batch_size": 4,
+      "timestamp": 1776827071.8351593
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.474566459655762,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 1,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827071.8352842
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.574921131134033,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827071.93564
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.67529296875,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.0360122
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.775725364685059,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.1364446
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.876164674758911,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.2368839
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 15.976594686508179,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.3373141
+    },
+    {
+      "type": "trainer_update_computed",
+      "worker_id": 0,
+      "batch_id": 1,
+      "updated": true,
+      "timestamp": 1776827072.3428526
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.07683825492859,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.4375556
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.177274703979492,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.5379941
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.277591705322266,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.6383111
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.37791109085083,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.7386303
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.47821879386902,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.8389387
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.578535079956055,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827072.939254
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.678920030593872,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.0396395
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.779351472854614,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.1400702
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.879778146743774,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.240497
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 16.980148553848267,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.3408675
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.080517768859863,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.4412377
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.180827140808105,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.5415456
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.281126499176025,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.6418493
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.381436586380005,
+      "global_policy_version": 0,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.742155
+    },
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 0,
+      "old_version": 0,
+      "new_version": 1,
+      "timestamp": 1776827073.7623863
+    },
+    {
+      "type": "controller_trainer_commit",
+      "trainer_worker_id": 0,
+      "batch_id": 0,
+      "policy_version": 1,
+      "timestamp": 1776827073.7731676
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.481831312179565,
+      "global_policy_version": 1,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.8425498
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.582255125045776,
+      "global_policy_version": 1,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827073.9429765
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.68251085281372,
+      "global_policy_version": 1,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.043229
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.7828688621521,
+      "global_policy_version": 1,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.1435874
+    },
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 1,
+      "old_version": 1,
+      "new_version": 2,
+      "timestamp": 1776827074.2355537
+    },
+    {
+      "type": "controller_trainer_commit",
+      "trainer_worker_id": 0,
+      "batch_id": 1,
+      "policy_version": 2,
+      "timestamp": 1776827074.2355716
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.88338351249695,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.2440994
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 17.983775854110718,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.3444943
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.084171295166016,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.444889
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.18458867073059,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.5453067
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.28499746322632,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.6457148
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.385401964187622,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.7461193
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.48580265045166,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827074.846521
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 8,
+      "policy_version": 0,
+      "timestamp": 1776827074.8718112
+    },
+    {
+      "type": "rollout_interrupt_observed",
+      "worker_id": 0,
+      "sample_id": 9,
+      "old_version": 0,
+      "new_version": 2,
+      "timestamp": 1776827074.8720255
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 8,
+      "source_id": 8,
+      "staleness": 2,
+      "dropped": false,
+      "global_policy_version": 2,
+      "timestamp": 1776827074.913744
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.603277683258057,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827074.9639986
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.703733921051025,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.0644536
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.80417490005493,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.1648946
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 18.904576539993286,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.2652965
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.005011796951294,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.3657324
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.10545301437378,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.4661725
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.20589303970337,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.5666122
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.306339740753174,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.6670601
+    },
+    {
+      "type": "rollout_load_version",
+      "worker_id": 0,
+      "sample_id": 9,
+      "loaded_version": 2,
+      "timestamp": 1776827075.693749
+    },
+    {
+      "type": "rollout_sample_interrupted",
+      "worker_id": 0,
+      "sample_id": 9,
+      "policy_version": 2,
+      "timestamp": 1776827075.6937842
+    },
+    {
+      "type": "controller_interrupted_received",
+      "sample_id": 9,
+      "source_id": 9,
+      "retry_count": 0,
+      "global_policy_version": 2,
+      "timestamp": 1776827075.6941035
+    },
+    {
+      "type": "controller_dispatch_rollout",
+      "sample_id": 12,
+      "step": 10,
+      "retry_count": 1,
+      "timestamp": 1776827075.6941395
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.433774948120117,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.794504
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.534199953079224,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.8949192
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.634597063064575,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827075.9953146
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.73501968383789,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827076.0957384
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.835447549819946,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827076.1961658
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 19.935843467712402,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827076.296562
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.036240577697754,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 1,
+      "timestamp": 1776827076.3969576
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 10,
+      "policy_version": 2,
+      "timestamp": 1776827076.4912183
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 10,
+      "source_id": 10,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 2,
+      "timestamp": 1776827076.5339897
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.173352003097534,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827076.5340688
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.273759841918945,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827076.6344783
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.37415623664856,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827076.734875
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.47457194328308,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827076.835292
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.575026512145996,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827076.9357443
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.67542552947998,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.0361435
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.77582287788391,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.1365407
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.87622380256653,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.2369418
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 20.976614713668823,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.3373322
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.077017068862915,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.4377346
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.177427291870117,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.5381446
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.27785849571228,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.6385772
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.378252744674683,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.7389705
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.47864317893982,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.8393607
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.57904577255249,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827077.9397728
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.679444551467896,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.0401626
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.779839992523193,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.140559
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.880264282226562,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.2409825
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 21.980669021606445,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.3413866
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.081061840057373,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.4417796
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.181547164916992,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.5422654
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.281952142715454,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.6426702
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.38236713409424,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.7430854
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.482829093933105,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.8435476
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.58325505256653,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827078.9439735
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.68370246887207,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827079.0444198
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.78409242630005,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827079.1448107
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.884493112564087,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827079.2452114
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 22.984896183013916,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 2,
+      "timestamp": 1776827079.3456142
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 11,
+      "policy_version": 2,
+      "timestamp": 1776827079.3979528
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 11,
+      "source_id": 11,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 2,
+      "timestamp": 1776827079.4404356
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.12996506690979,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.4906845
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.23037028312683,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.5910885
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.330708980560303,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.691427
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.431106090545654,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.7918246
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.53153657913208,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.8922544
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.63193106651306,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827079.9926486
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.732352256774902,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.0930743
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.832757234573364,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.1934755
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 23.933199167251587,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.2939181
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.033599615097046,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.3943176
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.13399887084961,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.4947171
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.2344388961792,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.5951571
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.334831953048706,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.6955502
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.435231924057007,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.7959511
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.5356285572052,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.896346
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.636032104492188,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827080.9967494
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.736459016799927,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.0971916
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.836902141571045,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.19762
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 24.937304258346558,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.2980294
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.037713289260864,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.3984313
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.138121843338013,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.4988399
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.238548278808594,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.5992672
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.338951587677002,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.6996696
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.439393281936646,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.8001113
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.539808750152588,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827081.900526
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.640203714370728,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827082.0009224
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.740618228912354,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827082.1013365
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.8410222530365,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827082.2017403
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 25.94146203994751,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 3,
+      "timestamp": 1776827082.3021815
+    },
+    {
+      "type": "rollout_emit",
+      "worker_id": 0,
+      "sample_id": 12,
+      "policy_version": 2,
+      "timestamp": 1776827082.315849
+    },
+    {
+      "type": "controller_rollout_emitted",
+      "sample_id": 12,
+      "source_id": 12,
+      "staleness": 0,
+      "dropped": false,
+      "global_policy_version": 2,
+      "timestamp": 1776827082.3573048
+    },
+    {
+      "type": "controller_dispatch_trainer_batch",
+      "batch_id": 2,
+      "trainer_worker_id": 0,
+      "batch_size": 4,
+      "timestamp": 1776827082.3573382
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.04146647453308,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.4021838
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.14147138595581,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.5021844
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.24147367477417,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.602214
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.341477632522583,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.702189
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.441478967666626,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.8021905
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.54147982597351,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827082.9021916
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.64148259162903,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.0021942
+    },
+    {
+      "type": "trainer_load_version",
+      "worker_id": 0,
+      "loaded_version": 2,
+      "timestamp": 1776827083.0151901
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.74148392677307,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.102195
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.841484308242798,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.2021956
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 26.941487312316895,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.302199
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.041488647460938,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.4022014
+    },
+    {
+      "type": "trainer_update_computed",
+      "worker_id": 0,
+      "batch_id": 2,
+      "updated": true,
+      "timestamp": 1776827083.4824278
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.14149308204651,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.5022056
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.241496562957764,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.6022077
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.341499090194702,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.702216
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.441500425338745,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.802212
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.54150366783142,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827083.902215
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.64150595664978,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.002228
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.741509914398193,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.102222
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.841511487960815,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.2022226
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 27.94151520729065,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.3022282
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.041515827178955,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.402227
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.141518592834473,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.50223
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.24152135848999,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.602259
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.341525077819824,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.7022374
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.441527128219604,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.8022392
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.54153037071228,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827084.9022431
+    },
+    {
+      "type": "controller_trace",
+      "t_sec": 28.641531705856323,
+      "global_policy_version": 2,
+      "rollout_queue_depth": 0,
+      "trainer_queue_depth": 0,
+      "replay_buffer_size": 0,
+      "timestamp": 1776827085.002244
+    },
+    {
+      "type": "version_change",
+      "trainer_worker_id": 0,
+      "batch_id": 2,
+      "old_version": 2,
+      "new_version": 3,
+      "timestamp": 1776827085.083994
+    },
+    {
+      "type": "controller_trainer_commit",
+      "trainer_worker_id": 0,
+      "batch_id": 2,
+      "policy_version": 3,
+      "timestamp": 1776827085.084009
+    }
+  ],
+  "effective_updates_per_second": 0.10444392459602234,
+  "reward_per_second": 0.24370249072405215,
+  "reward_per_update": 2.3333333333333335,
+  "pass_rate_per_update": 2.3333333333333335,
+  "config": {
+    "dataset": "data/tiny_coding_train.jsonl",
+    "epochs": 1,
+    "seed": 0,
+    "backend": "hf_trainable",
+    "hf_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "max_new_tokens": 96,
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "device": "auto",
+    "lr": 5e-06,
+    "update_batch_size": 4,
+    "staleness_k": 2,
+    "queue_maxsize": 256,
+    "producer_delay_sec": 0.0,
+    "learner_delay_sec": 0.0,
+    "interrupt_check_interval_sec": 0.05,
+    "generation_chunk_size": 1,
+    "rollout_chunk_delay_sec": 0.0,
+    "replay_dispatch_delay_sec": 0.0,
+    "controller_consume_delay_sec": 0.0,
+    "max_interrupt_retries": 1,
+    "num_rollout_workers": 1,
+    "num_trainer_workers": 1,
+    "rollout_devices": "cuda:0",
+    "trainer_devices": "cuda:1",
+    "decoupled_objective": 1,
+    "hf_dtype": "float32",
+    "hf_attn_impl": "eager",
+    "hf_chat_template": 1,
+    "grpo_epsilon": 0.2,
+    "grpo_kl_coef": 0.02,
+    "grpo_group_size": 0,
+    "grad_clip": 1.0,
+    "weight_decay": 0.0
+  },
+  "num_terminal_seen": 12,
+  "accepted_fraction_terminal": 1.0,
+  "dropped_fraction_terminal": 0.0
+}
